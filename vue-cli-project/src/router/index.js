@@ -3,7 +3,9 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import tool from '../views/tool.vue'
 import Company from '../views/Company.vue'
-import category from '../views/category.vue'
+import MainVisual from '../views/MainVisual.vue'
+// import Choice from '../views/Choice.vue'
+
 
 // ルート用のコンポーネントを読み込む
 Vue.use(VueRouter)
@@ -13,7 +15,8 @@ Vue.use(VueRouter)
   routes : [
   {
     path: '/',
-    component: category
+    component: MainVisual,
+    // Choice:Choice
   },
   {
     path: '/Home',

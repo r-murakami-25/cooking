@@ -2,7 +2,7 @@
 
 
 <template>
-<div id="recipe">
+<div id="Recipe">
         <p class="mainVisual"><img src="../assets/mainvisual.jpg" alt="mainVisual" ></p> 
         <h1>{{ make }}</h1>
         <p>{{text}}</p>
@@ -29,7 +29,7 @@
 
 <script>
 export default{
-    name:"recipe",
+    name:"Recipe",
     data(){
         return{
             make:"ロールキャベツ",
@@ -75,7 +75,7 @@ export default{
 
 
 <style scoped>
-#recipe{
+#Recipe{
     background:wheat;
     padding: 5%;
 }

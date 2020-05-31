@@ -6,13 +6,15 @@
 
     <header>
 
-        <p><img src="" alt="ロゴ"></p>
+        <p><router-link to="/"><img src="" alt="ロゴ"></router-link></p>
         <input type="text" class="search_box">
 
     </header>
-    <!-- <category/> -->
+
+    <router-view/>
+    <!-- <router-view/> -->
     
-    <div class="categories_main">
+    <!-- <div class="categories_main">
       <categories></categories>
       <categories></categories>
       <categories></categories>
@@ -20,17 +22,17 @@
       <categories></categories>
       <categories></categories>
 
-    </div>
-    <recipe></recipe>
-    <router-view/>
+    </div> -->
+    <!-- <recipe></recipe> -->
+    
 
     <footer>
-      <router-link to="/">カテゴリー</router-link>
+      
       <router-link to="/Home">ポリシー</router-link>
       <router-link to="/tool">利用規約</router-link>
       <router-link to="/tool/Company">会社概要</router-link>
       <!-- <p>footer ポリシー｜利用規約｜会社</p> -->
-      <p><img src="" alt="ロゴ"></p>
+      <p><router-link to="/"><img src="" alt="ロゴ"></router-link></p>
       </footer>
 
 
@@ -40,15 +42,15 @@
 
 <script>
 import Home from'./components/Home.vue'
-import categories from'./components/categories.vue'
-import recipe from'./components/recipe.vue'
+// import categories from'./components/categories.vue'
+// import recipe from'./components/recipe.vue'
 
 export default {
   name:'app',
   components:{
     Home:Home,
-    categories:categories,
-    recipe:recipe
+    // categories:categories,
+    // recipe:recipe
   }
 }
 </script>

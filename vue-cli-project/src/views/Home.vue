@@ -2,7 +2,7 @@
 
 <template>
   <div class="home">
-    <h1>ポリシー</h1>
+    <Policy></Policy>
    
     
   </div>
@@ -11,12 +11,12 @@
 <script>
 // @ is an alias to /src
 
-import Home from '@/components/Home.vue'
+import Policy from '@/components/Policy.vue'
 
 export default {
-  name: 'Home',
+  // name: 'Home',
   components: {
-    Home
+    Policy
   }
 }
 </script>
