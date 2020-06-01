@@ -1,17 +1,54 @@
+<!--  index.html>App.vue>view(Home.vue)>components(Home.vue)-->
+
+
 <template>
-    <div class="mood">
-        <!-- <h2>mood{{$route.params.userId}}</h2> -->
-        <router-view></router-view>
+<div id="Company">
+    <dl  class="MainCompany" v-for="item in list" v-bind:key="item.id">
+        <dt>{{item.title}}</dt>
+            <dd>{{item.main}}</dd>
+    </dl>   
     
-    </div>
+   
+</div>
+    
 </template>
 
+
+
 <script>
+export default{
+    name:"Company",
+    data(){
+        return{
+               
+                list:[
+                    {id:1, title:'社名', main:`dely株式会社 (dely, Inc.)`},
+
+                    {id:2, title:'代表取締役', main:`RISAKO`},
+                    
+                    {id:3, title:'設立', main:`2014年4月`},
+                 ]
+            };
+    }
+
+}
 
 </script>
 
+
 <style scoped>
-.mood{
-    background: red;
+#Company{
+    background:#f5deb3;
+    padding:2%;
 }
+
+
+
+
+
+
+
+
+
+
 </style>

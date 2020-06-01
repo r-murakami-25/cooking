@@ -1,18 +1,18 @@
 <template>
   <div class="tool">
-    <h1>規約</h1>
+    <Terms></Terms>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 
-import tool from '@/components/tool.vue'
+import Terms from '@/components/Terms.vue'
 
 export default {
   name: 'tool',
   components: {
-    tool
+    Terms
   }
 }
 </script>

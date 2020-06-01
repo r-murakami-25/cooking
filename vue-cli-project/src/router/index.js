@@ -28,7 +28,7 @@ Vue.use(VueRouter)
     
   },
   {
-    path: '/tool/Company',
+    path: '/Company',
     component: Company
   },
   // name: 'tool',

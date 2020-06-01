@@ -30,8 +30,8 @@
       
       <router-link to="/Home">ポリシー</router-link>
       <router-link to="/tool">利用規約</router-link>
-      <router-link to="/tool/Company">会社概要</router-link>
-      <!-- <p>footer ポリシー｜利用規約｜会社</p> -->
+      <router-link to="/Company">会社概要</router-link>
+    
       <p><router-link to="/"><img src="" alt="ロゴ"></router-link></p>
       </footer>
 
