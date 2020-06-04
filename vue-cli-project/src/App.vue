@@ -6,7 +6,7 @@
 
     <header>
 
-        <p><router-link to="/"><img src="" alt="ロゴ"></router-link></p>
+        <p><router-link to="/"><img src="assets/logo.gif" alt="ロゴ"></router-link></p>
         <nav>
           <ul>
             <li><router-link to="/Categories">カテゴリー</router-link></li>

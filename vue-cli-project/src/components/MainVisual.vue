@@ -3,21 +3,44 @@
 
 <template>
 <div id="MainVisual">
-<p class="mainVisual"><img src="../assets/mainvisual.jpg" alt="mainVisual" ></p>
-<h1>{{ msg }}</h1>  
+<!-- <p class="mainVisual"><img src="../assets/mainvisual.jpg" alt="mainVisual" ></p> -->
+<carousel
+:per-page="1"
+:autoplay="true" 
+:autoplayTimeout="3000"
+:loop="true"
+:speed="2000"
+>
+
+  <slide>
+    <img src="../assets/mainvisual.jpg" alt="スライド1">
+  </slide>
+  <slide>
+    <img src="../assets/mainvisual.jpg" alt="スライド2">
+  </slide>
+  <slide>
+    <img src="../assets/mainvisual.jpg" alt="スライド3">
+  </slide>
+  <slide>
+    <img src="../assets/mainvisual.jpg" alt="スライド4">
+  </slide>
+</carousel>
+ 
 
 </div>
     
 </template>
 
 <script>
-export default{
+import { Carousel, Slide } from 'vue-carousel';
+export default {
     name:"MainVisual",
-    data(){
-        return{msg:"カルーセルスライダー"};
+    components: {
+        Carousel,
+        Slide
     }
-
 }
+
 </script>
 
 
