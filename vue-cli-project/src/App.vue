@@ -7,11 +7,19 @@
     <header>
 
         <p><router-link to="/"><img src="" alt="ロゴ"></router-link></p>
+        <nav>
+          <ul>
+            <li><router-link to="/Categories">カテゴリー</router-link></li>
+            <li><router-link to="/Genre">ジャンル</router-link></li>
+          </ul>
+        </nav>
+
         <input type="text" class="search_box">
 
     </header>
 
     <router-view/>
+    
     <!-- <router-view/> -->
     
     <!-- <div class="categories_main">

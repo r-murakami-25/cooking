@@ -4,6 +4,10 @@ import Home from '../views/Home.vue'
 import tool from '../views/tool.vue'
 import Company from '../views/Company.vue'
 import MainVisual from '../views/MainVisual.vue'
+import Categories from '../views/Categories.vue'
+import　Genre　from '../views/Genre.vue'
+import　Recipe　from '../views/Recipe.vue'
+
 // import Choice from '../views/Choice.vue'
 
 
@@ -31,6 +35,19 @@ Vue.use(VueRouter)
     path: '/Company',
     component: Company
   },
+  {
+    path: '/Categories',
+    component: Categories
+  },
+  {
+    path: '/Genre',
+    component: Genre
+  },
+  {
+    path: '/Recipe',
+    component: Recipe
+  },
+
   // name: 'tool',
     // // route level code-splitting
     // // this generates a separate chunk (about.[hash].js) for this route

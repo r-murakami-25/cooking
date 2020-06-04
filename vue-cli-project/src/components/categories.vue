@@ -3,10 +3,15 @@
 
 <template>
 <div id="Categories">
+    
+    <h1>カテゴリー</h1>
+    
     <!-- <h5>Firebase 検索時　2階層目</h5> これもの中に入るとflexされてしまう。入らないと画面に出ないどうすればよいか-->
-    <div class="categories_list" v-for="item in list" v-bind:key="item.id">
+    <div class="MainCategories">
+    <a class="categories_list" v-for="item in list" v-bind:key="item.id">
         <p id="mainVisual"><img src="../assets/mainvisual.jpg" alt="mainVisual" ></p>
-        <h1>{{ item.name}}</h1>  
+        <h2>{{ item.name}}</h2>  
+    </a>
     </div>
 </div>
 
@@ -57,7 +62,7 @@ export default{
     
 } */
 
-#Categories{
+.MainCategories{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -66,6 +71,7 @@ export default{
 
 .categories_list{
     width: 30%;
+    display: inline-block;
 }
 
 

@@ -4,9 +4,12 @@
 <template>
 <!--<h2>新着レシピ<h2><div id="New_recipe">の中に入るとflexされてしまう。入らないと画面に出ないどうすればよいか-->
 <div id="NewRecipe">
-    <div class="menu" v-for="item in list" v-bind:key="item.id">
-    <p><img src="../assets/mainvisual.jpg" alt="新着レシピ"></p>
-    <h3>{{item.name}}</h3>
+    <h2>新着レシピ</h2>
+    <div class="MainRecipe">
+        <div class="menu" v-for="item in list" v-bind:key="item.id">
+        <p><img src="../assets/mainvisual.jpg" alt="新着レシピ"></p>
+        <h3>{{item.name}}</h3>
+        </div>
     </div>
 </div>
     
@@ -35,7 +38,7 @@ export default{
 
 
 <style scoped>
-#NewRecipe{
+.MainRecipe{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;

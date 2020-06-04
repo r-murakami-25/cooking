@@ -8,7 +8,7 @@
     <Ranking></Ranking>
     <NewRecipe></NewRecipe>
     <Recipe></Recipe>
-    <Categories></Categories>
+    <!-- <Categories></Categories> -->
     
   </div>
 </template>
@@ -21,7 +21,7 @@ import  Choice from '@/components/Choice.vue'
 import  Ranking from '@/components/Ranking.vue'
 import  NewRecipe from '@/components/NewRecipe.vue'
 import  Recipe from '@/components/Recipe.vue'
-import  Categories from '@/components/Categories.vue'
+// import  Categories from '@/components/Categories.vue'
 
 export default {
   // name: 'category',
@@ -31,7 +31,7 @@ export default {
     Ranking,
     NewRecipe,
     Recipe,
-    Categories
+    // Categories
   }
 }
 </script>

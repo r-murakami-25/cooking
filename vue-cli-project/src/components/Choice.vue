@@ -16,7 +16,7 @@ export default{
         return{
             
             list:[
-                {id:1, name:'お家で贅沢'},
+                // {id:1, name:'お家で贅沢'},
                 {id:2, name:'プロフェショナル料理'},
                 {id:3, name:'カテゴリー'},
                 {id:4, name:'ランキング'},
