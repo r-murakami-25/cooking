@@ -2,6 +2,7 @@
 
 
 <template>
+<!-- いらないファイル -->
 <div id="Choice">
 <button v-for="item in list" v-bind:key="item.id">{{item.name}}</button>
 

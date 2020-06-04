@@ -8,14 +8,16 @@
     
     <!-- <h5>Firebase 検索時　2階層目</h5> これもの中に入るとflexされてしまう。入らないと画面に出ないどうすればよいか-->
     <div class="MainCategories">
-    <a class="categories_list" v-for="item in list" v-bind:key="item.id">
-        <p id="mainVisual"><img src="../assets/mainvisual.jpg" alt="mainVisual" ></p>
-        <h2>{{ item.name}}</h2>  
-    </a>
+        <router-link to="/Recipe">
+            <div class="categories_list" v-for="item in list" v-bind:key="item.id">
+            <p id="mainVisual"><img src="../assets/mainvisual.jpg" alt="mainVisual" ></p>
+            <h2>{{ item.name}}</h2>  
+            </div>
+        </router-link>
     </div>
 </div>
 
-    
+     
 </template>
 
 <script>

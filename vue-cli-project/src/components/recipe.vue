@@ -3,6 +3,7 @@
 
 <template>
 <div id="Recipe">
+    <div v-for="item in list" v-bind:key="item.id">
         <p class="mainVisual"><img src="../assets/mainvisual.jpg" alt="mainVisual" ></p> 
         <h1>{{ make }}</h1>
         <p>{{text}}</p>
@@ -22,7 +23,7 @@
         <p>{{point_detail}}</p>
 
 
-
+    </div>
 </div>
     
 </template>
@@ -59,6 +60,7 @@ export default{
                 {id:6, explain:'タマネギを細かく割ります。'},
 
                 ],
+                
             point:"ポイント",
             point_detail:`薄力粉は薄めに付けてください、
             薄力粉を付けることで、味が絡みやすくなります。
