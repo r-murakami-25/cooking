@@ -7,14 +7,14 @@
     <header>
 
         <p><router-link to="/"><img src="assets/logo.gif" alt="ロゴ"></router-link></p>
-        <nav>
+        <nav class="Navigation">
           <ul>
             <li><router-link to="/Categories">カテゴリー</router-link></li>
             <li><router-link to="/Genre">ジャンル</router-link></li>
           </ul>
         </nav>
 
-        <input type="text" class="search_box">
+        <input type="text" class="search_box" placeholder="料理名・食材でレシピをさがす" value="">
 
     </header>
 
@@ -82,7 +82,15 @@ export default {
     width:100%;
 }
 
-	
+a{
+  text-decoration: none;
+}
+
+ul{
+  list-style: none;
+}
+
+
 #app {
   font-family: "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", "MS PGothic", Osaka, sans-serif;
 	font-weight: normal;
@@ -97,34 +105,39 @@ header{
   background:#f5deb3;
 }
 
-.search_box{
-  width:100%;
-}
-
-.categories_main{
-  max-width: 1200px;
-  background:whitesmoke;
+.Navigation{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around ;
+  text-align: center;
 }
 
-.home{
-  background:pink;
-
+ul{
+  width:100%;
+}
+ul li{
+  display: inline-block;
+  width: 30%;
 }
 
-.company{
-  background:green;
-}
 
-.tool{
-  background:yellow;
+
+.search_box{
+  width:100%;
 }
 
 footer{
   background: #deb887;
 }
+
+/* .categories_main{
+  max-width: 1200px;
+  background:whitesmoke;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around ;
+} */
+
 /* #nav {
   padding: 30px;
 }

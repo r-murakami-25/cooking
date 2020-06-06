@@ -10,13 +10,14 @@
 :autoplayTimeout="3000"
 :loop="true"
 :speed="2000"
+
 >
 
   <slide>
     <img src="../assets/mainvisual.jpg" alt="スライド1">
   </slide>
   <slide>
-    <img src="../assets/mainvisual.jpg" alt="スライド2">
+    <img src="../assets/dish.jpg" alt="スライド2">
   </slide>
   <slide>
     <img src="../assets/mainvisual.jpg" alt="スライド3">
@@ -45,21 +46,12 @@ export default {
 
 
 <style scoped>
-#MainVisual{
+/* #MainVisual{
     background:chocolate;
-}
-
-.mainVisual{
-    width:100%;
-    background:#f5deb3;
-    text-align: center;
-}
-
-
-
-/* .mainVisual img{
-    width: 100%;
 } */
+
+
+
 
 
 #categories{
