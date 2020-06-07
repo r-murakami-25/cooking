@@ -4,10 +4,11 @@
 <template>
 <div id="Categories">
     
-    <h1>カテゴリー</h1>
+   
     
     <!-- <h5>Firebase 検索時　2階層目</h5> これもの中に入るとflexされてしまう。入らないと画面に出ないどうすればよいか-->
     <div class="MainCategories">
+         <h2>キャベツのレシピ</h2>
         <router-link to="/Recipe">
             <div class="categories_list" v-for="item in list" v-bind:key="item.id">
             <p id="mainVisual"><img src="../assets/mainvisual.jpg" alt="mainVisual" ></p>
@@ -26,12 +27,12 @@ export default{
     data(){
         return{
             list:[
-                {id:1, name:'キャベツ'},
-                {id:2, name:'ニンジン'},
-                {id:3, name:'ホウレンソウ'},
-                {id:4, name:'セロリ'},
-                {id:5, name:'キュウリ'},
-                {id:6, name:'ナス'},
+                {id:1, name:'キャベツチーズ'},
+                {id:2, name:'餃子'},
+                {id:3, name:'コールスロー'},
+                {id:4, name:'キャベツサラダ'},
+                {id:5, name:'お浸し'},
+                {id:6, name:'ロールキャベツ'},
                
             ]
         };
@@ -69,8 +70,13 @@ export default{
     flex-wrap: wrap;
     justify-content: space-between;
     background: cornflowerblue;
+    padding:2%;
 }
 
+h2{
+    width:100%;
+    padding: 0 1% 1% 1%;
+}
 .categories_list{
     width: 30%;
     display: inline-block;

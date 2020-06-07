@@ -13,7 +13,7 @@
             <li><router-link to="/Genre">ジャンル</router-link></li>
           </ul>
         </nav>
-
+        
         <input type="text" class="search_box" placeholder="料理名・食材でレシピをさがす" value="">
 
     </header>
@@ -103,6 +103,7 @@ ul{
 
 header{
   background:#f5deb3;
+  padding:1%;
 }
 
 .Navigation{
@@ -110,12 +111,14 @@ header{
   flex-wrap: wrap;
   justify-content: space-around ;
   text-align: center;
+  padding:1%;
 }
 
-ul{
+.Navigation ul{
   width:100%;
 }
-ul li{
+
+.Navigation ul li{
   display: inline-block;
   width: 30%;
 }
@@ -123,7 +126,12 @@ ul li{
 
 
 .search_box{
-  width:100%;
+  display: block;
+  margin: 0 auto;
+  width:80%;
+  background:#ffffff;
+  border-radius: 6px;
+  padding:0.5%;
 }
 
 footer{
