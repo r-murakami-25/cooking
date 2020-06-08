@@ -9,12 +9,14 @@
     <!-- <h5>Firebase 検索時　2階層目</h5> これもの中に入るとflexされてしまう。入らないと画面に出ないどうすればよいか-->
     <div class="MainCategories">
          <h2>キャベツのレシピ</h2>
-        <router-link to="/Recipe">
+        
             <div class="categories_list" v-for="item in list" v-bind:key="item.id">
-            <p id="mainVisual"><img src="../assets/mainvisual.jpg" alt="mainVisual" ></p>
-            <h2>{{ item.name}}</h2>  
+                <router-link :to="{name:'Recipe', params:{recipe_id: item.id}}">
+                    <p id="mainVisual"><img src="../assets/mainvisual.jpg" alt="mainVisual" ></p>
+                    <h2>{{ item.name}}</h2>
+                </router-link>  
             </div>
-        </router-link>
+       
     </div>
 </div>
 
@@ -42,6 +44,8 @@ export default{
 </script>
 
 
+
+
 <style scoped>
 /* #mainVisual{
     width:100%;
@@ -65,7 +69,7 @@ export default{
     
 } */
 
-.MainCategories{
+/* .MainCategories{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -73,14 +77,31 @@ export default{
     padding:2%;
 }
 
+.categories_list{
+    width: 30%;
+    display: inline-block;
+} */
+
+.MainCategories{
+    padding:2%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /* background: coral; */
+}
+
 h2{
     width:100%;
     padding: 0 1% 1% 1%;
 }
+
 .categories_list{
-    width: 30%;
+    width:45%;
+    padding:2% 0;
     display: inline-block;
 }
+
+
 
 
 </style>

@@ -53,7 +53,7 @@ h2{
 }
 
 .menu{
-    width:50%;
+    width:45%;
     padding:2% 0;
 }
 

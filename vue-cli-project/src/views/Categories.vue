@@ -17,6 +17,9 @@ export default {
   // name: 'Company',
   components: {
     Categories
-  }
+  },
+  // mounted: () => {
+  //   console.log(this.$route.params)
+  // }
 }
 </script>

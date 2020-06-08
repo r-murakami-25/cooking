@@ -134,6 +134,14 @@ header{
   padding:0.5%;
 }
 
+.MainRecipe{
+    padding:2%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /* background: coral; */
+}
+
 footer{
   background: #deb887;
 }

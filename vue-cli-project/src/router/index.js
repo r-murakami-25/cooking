@@ -35,6 +35,8 @@ Vue.use(VueRouter)
     path: '/Company',
     component: Company
   },
+  // /Categories/1
+  // /Categories/2
   {
     path: '/Categories',
     component: Categories
@@ -44,7 +46,8 @@ Vue.use(VueRouter)
     component: Genre
   },
   {
-    path: '/Recipe',
+    path: '/Recipe/:recipe_id',
+    name:'Recipe',
     component: Recipe
   },
 
