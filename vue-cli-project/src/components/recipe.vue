@@ -78,7 +78,7 @@ export default{
 
 <style scoped>
 #Recipe{
-    background:wheat;
+    /* background:wheat; */
     padding: 5%;
 }
 
