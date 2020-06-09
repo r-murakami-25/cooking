@@ -3,21 +3,14 @@
 
 <template>
 <div id="GenreMenu">
-    
-    <h1>中華</h1>
-    
-    <!-- <h5>Firebase 検索時　2階層目</h5> これもの中に入るとflexされてしまう。入らないと画面に出ないどうすればよいか-->
-    <div class="GenreMenu">
-        <router-link to="/Recipe">
-            <div class="categories_list" v-for="item in list" v-bind:key="item.id">
-            <p id="mainVisual"><img src="../assets/mainvisual.jpg" alt="mainVisual" ></p>
-            <h2>{{ item.name}}</h2>  
-            </div>
-        </router-link>
-    </div>
-</div>
+    <h1>{{title}}</h1>
 
-     
+    <ul v-for='category in categorys' v-bind:key="category.id" class="GenreMenu_ist">
+        <li>
+            <router-link to="/">{{ category.name }}</router-link>
+        </li>
+    </ul>
+</div>
 </template>
 
 <script>
@@ -25,15 +18,16 @@ export default{
     name:"GenreMenu",
     data(){
         return{
-            list:[
-                {id:1, name:'キャベツ'},
-                {id:2, name:'ニンジン'},
-                {id:3, name:'ホウレンソウ'},
-                {id:4, name:'セロリ'},
-                {id:5, name:'キュウリ'},
-                {id:6, name:'ナス'},
-               
-            ]
+            title: 'ジャンル',
+            categorys:[
+                    {id:1, name:'和食・日本料理'},
+                    {id:2, name:'中華'},
+                    {id:3, name:'フレンチ'},
+                    {id:4, name:'イタリアン'},
+                    {id:5, name:'郷土料理'},
+                    {id:6, name:'多国籍料理'},
+
+                ]
         };
     }
 
@@ -41,40 +35,36 @@ export default{
 </script>
 
 
+
+
 <style scoped>
-/* #mainVisual{
-    width:100%;
-    background:#f5deb3;
-    text-align: center;
-} */
-
-
-
-/* .mainVisual img{
-    width: 100%;
-} */
-
-
-/* #categories{
-    padding: 0.5em 1em;
-    margin: 2em 0;
-    font-weight: bold;
-    border: solid 3px #000000;
-    width:30%;
-    
-} */
-
-.MainCategories{
+#GenreMenu{
+    padding:2%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    background: cornflowerblue;
+    /* background: coral; */
 }
 
-.categories_list{
-    width: 30%;
+
+
+h1{
+    width:100%;
+    padding: 0 1% 1% 1%;
+}
+
+.GenreMenu_ist{
+    width:15%;
+    padding:2% 0;
     display: inline-block;
 }
+
+span{
+    font-size: 25px;
+    font-weight: bold;
+}
+
+
 
 
 </style>

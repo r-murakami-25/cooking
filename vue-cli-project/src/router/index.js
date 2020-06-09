@@ -38,18 +38,26 @@ Vue.use(VueRouter)
   // /Categories/1
   // /Categories/2
   {
-    path: '/Categories',
+    path: '/Categories/:categories_id',
+    name: Categories,
     component: Categories
   },
   {
     path: '/Genre',
     component: Genre
   },
-  {
-    path: '/Recipe/:recipe_id',
-    name:'Recipe',
-    component: Recipe
-  },
+  // {
+  //   path: '/Recipe/:recipe_id',
+  //   name:'Recipe',
+  //   component: Recipe
+  // },
+
+  // {
+  //   path: '/Recipe/:recipe_id',
+  //   name:'Recipe',
+  //   component: Recipe
+  // },
+
 
   // name: 'tool',
     // // route level code-splitting

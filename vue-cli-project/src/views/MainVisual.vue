@@ -5,6 +5,7 @@
     
     <MainVisual></MainVisual> 
     <Category></Category>
+    <GenreMenu></GenreMenu>
     <Ranking></Ranking>
     <NewRecipe></NewRecipe>
     <!-- <Recipe></Recipe> -->
@@ -21,6 +22,7 @@ import  MainVisual from '@/components/MainVisual.vue'
 import  Category from '@/components/Category.vue'
 import  Ranking from '@/components/Ranking.vue'
 import  NewRecipe from '@/components/NewRecipe.vue'
+import  GenreMenu from '@/components/GenreMenu.vue'
 // import  Recipe from '@/components/Recipe.vue'
 // import  Categories from '@/components/Categories.vue'
 // import  Choice from '@/components/Choice.vue'
@@ -31,6 +33,7 @@ export default {
   components: {
     MainVisual,
     Category,
+    GenreMenu,
     Ranking,
     NewRecipe,
     // Recipe,
