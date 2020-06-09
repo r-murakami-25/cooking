@@ -9,9 +9,9 @@
         <li>
             <span>{{ category.name }}</span>
             <ul>
-                <li v-for="menu in category.menu" v-bind:key="menu.id">
-                     <router-link :to="{ name:'Categories', params:{categories_id: menu.id}}">{{ menu }}</router-link>
-                </li>
+                <router-link to="/Categories">
+                <li v-for="menu in category.menu" v-bind:key="menu.id">{{ menu }}</li>
+                </router-link>
             </ul>
         </li>
     </ul> 

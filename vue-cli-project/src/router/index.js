@@ -38,7 +38,7 @@ Vue.use(VueRouter)
   // /Categories/1
   // /Categories/2
   {
-    path: '/Categories/:categories_id',
+    path: '/Categories',
     name: Categories,
     component: Categories
   },
@@ -46,17 +46,18 @@ Vue.use(VueRouter)
     path: '/Genre',
     component: Genre
   },
+ 
   // {
-  //   path: '/Recipe/:recipe_id',
-  //   name:'Recipe',
+  //  path: '/Recipe',
+  //  name:'Recipe',
   //   component: Recipe
   // },
 
-  // {
-  //   path: '/Recipe/:recipe_id',
-  //   name:'Recipe',
-  //   component: Recipe
-  // },
+ {
+    path: '/Recipe/:recipe_id',
+     name:'Recipe',
+    component: Recipe
+},
 
 
   // name: 'tool',

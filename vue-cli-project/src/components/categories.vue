@@ -11,10 +11,10 @@
          <h2>キャベツのレシピ</h2>
         
             <div class="categories_list" v-for="item in list" v-bind:key="item.id">
-                <!-- <router-link :to="{name:'Recipe', params:{recipe_id: item.id}}"> -->
+                 <router-link :to="{name:'Recipe', params:{recipe_id: item.id}}"> 
                     <p id="mainVisual"><img src="../assets/mainvisual.jpg" alt="mainVisual" ></p>
                     <h2>{{ item.name}}</h2>
-                <!-- </router-link>   -->
+                </router-link> 
             </div>
        
     </div>
