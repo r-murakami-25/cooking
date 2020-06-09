@@ -37,6 +37,11 @@ Vue.use(VueRouter)
   },
   // /Categories/1
   // /Categories/2
+  // {
+  //   path: '/Categories/:categories_id',
+  //   name: Categories,
+  //   component: Categories
+  // },
   {
     path: '/Categories',
     name: Categories,

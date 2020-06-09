@@ -6,14 +6,16 @@
      <h1>{{title}}</h1>
 
     <ul v-for='category in categorys' v-bind:key="category.id" class="category_ist">
-        <li>
+        <!-- <router-link :to="{name:'Categories', params:{categories_id: category.id}}"> -->
+        <router-link to="/Categories"><li>
             <span>{{ category.name }}</span>
             <ul>
-                <router-link to="/Categories">
+                
                 <li v-for="menu in category.menu" v-bind:key="menu.id">{{ menu }}</li>
-                </router-link>
             </ul>
         </li>
+        </router-link>
+        <!-- </router-link> -->
     </ul> 
 
     <!-- <div v-for="team in teams"  v-bind:key="team.id">
