@@ -5,27 +5,27 @@
 <div id="Category">
      <h1>{{title}}</h1>
 
-    <ul v-for='category in categorys' v-bind:key="category.id" class="category_ist">
+    <!-- <ul v-for='category in categorys' v-bind:key="category.id" class="category_ist"> -->
         <!-- <router-link :to="{name:'Categories', params:{categories_id: category.id}}"> -->
-        <router-link to="/Categories"><li>
+        <!-- <router-link to="/Categories"><li>
             <span>{{ category.name }}</span>
             <ul>
                 
                 <li v-for="menu in category.menu" v-bind:key="menu.id">{{ menu }}</li>
             </ul>
         </li>
-        </router-link>
+        </router-link> -->
         <!-- </router-link> -->
-    </ul> 
+    <!-- </ul>  -->
 
-    <!-- <div v-for="team in teams"  v-bind:key="team.id">
+     <div v-for="team in teams"  v-bind:key="team.id">
         {{ team.name }}
         <ul>
             <li v-for="member in team.members"  v-bind:key="member.id">
-                <router-link :to="{name:'Recipe', params:{recipe_id: member.name}}"> {{ member.name }}</router-link>
+                <router-link :to="{name:'Categories', params:{categories_id: member.name}}"> {{ member.name }}</router-link>
             </li>
         </ul>
-    </div> -->
+    </div> 
 </div>
 </template>
 
@@ -35,44 +35,45 @@ export default{
     data(){
         return{
              title: 'カテゴリー一覧',
-             categorys:[
-             {id:1, name:'野菜', menu:['キャベツ', 'ニンジン', 'トマト', 'ダイコン','ホウレンソウ']},
-             {id:2, name:'肉',  menu: ['鶏肉', '牛肉', '豚肉']},
-             {id:3, name:'魚',  menu: ['白身魚', '赤身魚', '貝', 'エビ','海藻']},  
-             {id:4, name:'豆',  menu: ['豆腐', '大豆']}
+            //  categorys:[
+            //  {id:1, name:'野菜', menu:['キャベツ', 'ニンジン', 'トマト', 'ダイコン','ホウレンソウ']},
+            //  {id:2, name:'肉',  menu: ['鶏肉', '牛肉', '豚肉']},
+            //  {id:3, name:'魚',  menu: ['白身魚', '赤身魚', '貝', 'エビ','海藻']},  
+            //  {id:4, name:'豆',  menu: ['豆腐', '大豆']}
 
-              ]
+            //   ]
 
-        //     teams: [
-        //     {
-        //         name: 'はるかな',
-        //         members: [
-        //             {
-        //                 'name': '大空遥'
-        //             }, {
-        //                 'name': '比嘉かなた'
-        //             }
-        //         ]
-        //     }, {
-        //         name: 'エクレア',
-        //         members: [
-        //             {
-        //                 'name': 'トーマス・紅愛'
-        //             }, {
-        //                 'name': 'トーマス・恵美理'
-        //             }
-        //         ]
-        //     }, {
-        //         name: 'なるあや',
-        //         members: [
-        //             {
-        //                 'name': '遠井成美'
-        //             }, {
-        //                 'name': '立花彩紗'
-        //             }
-        //         ]
-        //     }
-        // ]
+            teams: [
+            {
+                 name: 'はるかな',
+                 members: [
+                     {
+                         'name': '大空遥'
+                    }, {
+                         'name': '比嘉かなた'
+                     }
+                 ]
+             }, {
+                 name: 'エクレア',
+                 members: [
+                     {
+                         'name': 'トーマス・紅愛'
+                     }, {
+                         'name': 'トーマス・恵美理'
+                    }
+                 ]
+             }, {
+        
+                 name: 'なるあや',
+                 members: [
+                     {
+                         'name': '遠井成美'
+                     }, {
+                         'name': '立花彩紗'
+                     }
+                 ]
+             }
+         ]
         };
     }
 
