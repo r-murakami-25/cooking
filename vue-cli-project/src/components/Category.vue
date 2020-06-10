@@ -22,7 +22,7 @@
         {{ team.name }}
         <ul>
             <li v-for="member in team.members"  v-bind:key="member.id">
-                <router-link :to="{name:'Categories', params:{categories_id: member.name}}"> {{ member.name }}</router-link>
+                <router-link :to="{name:'Categories', params:{categories_id: member.id}}"> {{ member.name }}</router-link>
             </li>
         </ul>
     </div> 
@@ -45,34 +45,31 @@ export default{
 
             teams: [
             {
-                 name: 'はるかな',
+                 name: '野菜',
                  members: [
-                     {
-                         'name': '大空遥'
-                    }, {
-                         'name': '比嘉かなた'
-                     }
+                     { id:1, 'name': 'キャベツ'}, { id:2,'name': 'ニンジン'},{ id:3,'name': 'トマト'},{id:12,'name': 'ダイコン'},
+                     { id:5, 'name': 'ホウレンソウ'},{ id:6, 'name': 'ジャガイモ'},
                  ]
-             }, {
-                 name: 'エクレア',
+             },
+            {
+                 name: '肉',
                  members: [
-                     {
-                         'name': 'トーマス・紅愛'
-                     }, {
-                         'name': 'トーマス・恵美理'
-                    }
+                     { id:6, 'name': '鶏肉'}, { id:7,'name': '豚肉'},{id:8,'name': '牛肉'}
                  ]
-             }, {
-        
-                 name: 'なるあや',
+             },
+             {
+                 name: '魚',
                  members: [
-                     {
-                         'name': '遠井成美'
-                     }, {
-                         'name': '立花彩紗'
-                     }
+                     { id:9, 'name': '白身魚'}, { id:10,'name': '赤身魚'},{id:11,'name': '貝'},{id:4,'name': 'エビ'},
+                     { id:13,'name': '海藻'},
                  ]
-             }
+             },
+             {
+                 name: '豆',
+                 members: [
+                     { id:14, 'name': '豆腐'}, {id:15, 'name': '大豆'}
+                 ]
+             },
          ]
         };
     }

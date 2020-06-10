@@ -7,7 +7,7 @@
 
     <ul v-for='category in categorys' v-bind:key="category.id" class="GenreMenu_ist">
         <li>
-            <router-link to="/">{{ category.name }}</router-link>
+            <router-link :to="{name:'Categories', params:{categories_id: category.id}}">{{ category.name }}</router-link>
         </li>
     </ul>
 </div>
@@ -20,12 +20,12 @@ export default{
         return{
             title: 'ジャンル',
             categorys:[
-                    {id:1, name:'和食・日本料理'},
-                    {id:2, name:'中華'},
-                    {id:3, name:'フレンチ'},
-                    {id:4, name:'イタリアン'},
-                    {id:5, name:'郷土料理'},
-                    {id:6, name:'多国籍料理'},
+                    {id:16, name:'和食・日本料理'},
+                    {id:17, name:'中華'},
+                    {id:18, name:'フレンチ'},
+                    {id:19, name:'イタリアン'},
+                    {id:20, name:'郷土料理'},
+                    {id:21, name:'多国籍料理'},
 
                 ]
         };

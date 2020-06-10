@@ -1,7 +1,7 @@
 <!--  index.html>App.vue>view(Home.vue)>components(Home.vue)-->
 
 
-<template>
+<template><!--いらないファイル-->
 <div id="Genre">
     
     <h1>ジャンル</h1>

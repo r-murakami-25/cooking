@@ -3,7 +3,7 @@
 
 <template>
 <div id="Recipe">
-    <div v-for="item in list" v-bind:key="item.id">
+    <div>
         <p class="mainVisual"><img src="../assets/mainvisual.jpg" alt="mainVisual" ></p> 
         <h1>{{ make }}</h1>
         <p>{{text}}</p>
@@ -23,7 +23,7 @@
         <p>{{point_detail}}</p>
 
 
-    </div>
+    </div> 
 </div>
     
 </template>
