@@ -5,6 +5,20 @@ import store from './store'//storeを読み込む
 
 Vue.config.productionTip = false
 
+//firebase　以下
+import firebase from 'firebase'
+var firebaseConfig = {
+  apiKey: "AIzaSyD7F8TCPHLy7omQhWDTNsrJ4_o6RJp6V9Y",
+  authDomain: "my-portfolio-9973f.firebaseapp.com",
+  databaseURL: "https://my-portfolio-9973f.firebaseio.com",
+  projectId: "my-portfolio-9973f",
+  storageBucket: "my-portfolio-9973f.appspot.com",
+  messagingSenderId: "495175028807",
+  appId: "1:495175028807:web:bb5db40b14607beec72162"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
 // Vue アプリケーションを起動します
 new Vue({
   el:'#app',
@@ -15,3 +29,6 @@ new Vue({
 //router,store使ってAppコンポーネント（app.vue）を表示するという意味（重要度低い）
 
 //→要はindex.htmlとApp.vueを連携させる地う意味
+
+
+
