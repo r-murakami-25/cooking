@@ -46,22 +46,15 @@ export default {
 
 
 <style scoped>
-/* #MainVisual{
-    background:chocolate;
-} */
 
-
-
-
-
-#categories{
-    padding: 0.5em 1em;
-    margin: 2em 0;
-    font-weight: bold;
-    border: solid 3px #000000;
-    width:30%;
-    
+ /* #MainVisual{
+  max-width:1200px ;
+  max-height: 500px;
 }
+.slide img{
+  width: 100%;
+  height:auto;
+}  */
 
 
 </style>

@@ -6,7 +6,7 @@
 
     <header>
 
-        <p><router-link to="/"><img src="assets/logo.gif" alt="ロゴ"></router-link></p>
+        <h1 class="logo"><router-link to="/"><img src="./assets/logo.gif" alt="ロゴ"></router-link></h1>
         <nav class="Navigation">
           <ul>
             <li><router-link to="/Categories">カテゴリー</router-link></li>
@@ -35,12 +35,12 @@
     
 
     <footer>
-      
+
+      <p class="logo"><router-link to="/"><img src="./assets/logo.gif" alt="ロゴ"></router-link></p>
       <router-link to="/Home">ポリシー</router-link>
       <router-link to="/tool">利用規約</router-link>
       <router-link to="/Company">会社概要</router-link>
     
-      <p><router-link to="/"><img src="" alt="ロゴ"></router-link></p>
       </footer>
 
 
@@ -59,7 +59,15 @@ export default {
     Home:Home,
     // categories:categories,
     // recipe:recipe
-  }
+  },
+  scrollBehavior (to, from, savedPosition) {
+  return { x: 0, y: 0 }
+}
+  // scrollBehaivor () {
+  // return { x: 0, y: 0 }
+  // },
+  
+
 }
 </script>
 
@@ -104,6 +112,11 @@ ul{
 header{
   background:#f5deb3;
   padding:1%;
+}
+
+.logo{
+  display: inline-block;
+  width:5%;
 }
 
 .Navigation{

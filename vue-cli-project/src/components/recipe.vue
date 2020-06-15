@@ -5,7 +5,7 @@
 <div id="Recipe">
     <div>
         <p class="mainVisual"><img src="../assets/mainvisual.jpg" alt="mainVisual" ></p> 
-        <h1>{{ make }}</h1>
+        <h2>{{ make }}</h2>
         <p>{{text}}</p>
         <p>{{time}}</p>
         <h2>{{material}}</h2>
