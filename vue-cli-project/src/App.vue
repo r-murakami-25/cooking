@@ -71,7 +71,8 @@ export default {
   },
   scrollBehavior (to, from, savedPosition) {
   return { x: 0, y: 0 }
-}
+},
+
   // scrollBehaivor () {
   // return { x: 0, y: 0 }
   // },
