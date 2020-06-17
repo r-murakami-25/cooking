@@ -34,12 +34,16 @@
     <!-- <recipe></recipe> -->
     
 
-    <footer>
+    <footer class="footer">
+
+      <ul class=footer_nav>
+        <li><router-link to="/Home">ポリシー</router-link></li>
+        <li><router-link to="/tool">利用規約</router-link></li>
+        <li><router-link to="/Company">会社概要</router-link></li>
+      </ul>
 
       <p class="logo"><router-link to="/"><img src="./assets/logo.gif" alt="ロゴ"></router-link></p>
-      <router-link to="/Home">ポリシー</router-link>
-      <router-link to="/tool">利用規約</router-link>
-      <router-link to="/Company">会社概要</router-link>
+
     
       </footer>
 
@@ -72,6 +76,7 @@ export default {
   scrollBehavior (to, from, savedPosition) {
   return { x: 0, y: 0 }
 },
+
 
   // scrollBehaivor () {
   // return { x: 0, y: 0 }
@@ -167,7 +172,24 @@ header{
 
 footer{
   background: #deb887;
+  text-align: center;
 }
+
+.footer_nav li{
+  padding: 1%;
+  display: inline-block;
+}
+
+
+/* .footer{
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.footer_nav{
+  width: 95%;
+} */
 
 /* .categories_main{
   max-width: 1200px;
