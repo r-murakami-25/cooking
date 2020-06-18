@@ -4,10 +4,10 @@
   <div class="mainVisual">
     
     <MainVisual></MainVisual> 
-    <Category></Category>
-    <GenreMenu></GenreMenu>
+    <!-- <GenreMenu></GenreMenu> -->
     <Ranking></Ranking>
     <NewRecipe></NewRecipe>
+    <Category></Category>
     <!-- <Recipe></Recipe> -->
     <!-- <Categories></Categories> -->
     <!-- <Choice></Choice> -->

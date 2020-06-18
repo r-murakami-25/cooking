@@ -64,6 +64,21 @@ span{
     font-weight: bold;
 }
 
+/* スマホの時 */
+@media screen and (max-width: 480px){
+#GenreMenu{
+    padding:2%;
+    font-display: block;
+}
+
+.GenreMenu_ist{
+    width:100%;
+
+}
+
+   
+}
+
 
 
 

@@ -18,10 +18,10 @@
         <!-- </router-link> -->
     <!-- </ul>  -->
 
-     <div v-for="team in teams"  v-bind:key="team.id">
+     <div v-for="team in teams"  v-bind:key="team.id" class="category_list">
         {{ team.name }}
         <ul>
-            <li v-for="member in team.members"  v-bind:key="member.id">
+            <li v-for="member in team.members"  v-bind:key="member.id"  class="flex">
                 <router-link :to="{name:'Categories', params:{categories_id: member.id}}"> {{ member.name }}</router-link>
             </li>
         </ul>
@@ -47,7 +47,7 @@ export default{
             {
                  name: '野菜',
                  members: [
-                     { id:1, 'name': 'キャベツ'}, { id:2,'name': 'ニンジン'},{ id:3,'name': 'トマト'},{id:12,'name': 'ダイコン'},
+                     { id:1, 'name': 'キャベツ'}, { id:2,'name': 'ニンジン'},{ id:3,'name': 'トマト'},{id:4,'name': 'ダイコン'},
                      { id:5, 'name': 'ホウレンソウ'},{ id:6, 'name': 'ジャガイモ'},
                  ]
              },
@@ -60,7 +60,7 @@ export default{
              {
                  name: '魚',
                  members: [
-                     { id:9, 'name': '白身魚'}, { id:10,'name': '赤身魚'},{id:11,'name': '貝'},{id:4,'name': 'エビ'},
+                     { id:9, 'name': '白身魚'}, { id:10,'name': '赤身魚'},{id:11,'name': '貝'},{id:12,'name': 'エビ'},
                      { id:13,'name': '海藻'},
                  ]
              },
@@ -96,11 +96,11 @@ h1{
     padding: 0 1% 1% 1%;
 }
 
-.category_ist{
+/* .category_ist{
     width:20%;
     padding:2% 0;
     display: inline-block;
-}
+} */
 
 span{
     font-size: 25px;
@@ -108,6 +108,29 @@ span{
 }
 
 
+/* スマホの時 */
+@media screen and (max-width: 480px){
+
+#Category{
+  display: block;
+}
+
+.flex{
+    width:50%;
+    display: inline-block;
+    padding:2% 0;
+    
+}
+
+.category_list{
+    padding:5% 0;
+    
+
+}
+
+
+
+}
 
 
 </style>
