@@ -7,6 +7,7 @@
     <!-- <GenreMenu></GenreMenu> -->
     <Ranking></Ranking>
     <NewRecipe></NewRecipe>
+    <SeasonalRecipe></SeasonalRecipe>
     <Category></Category>
     <!-- <Recipe></Recipe> -->
     <!-- <Categories></Categories> -->
@@ -22,6 +23,7 @@ import  MainVisual from '@/components/MainVisual.vue'
 import  Category from '@/components/Category.vue'
 import  Ranking from '@/components/Ranking.vue'
 import  NewRecipe from '@/components/NewRecipe.vue'
+import  SeasonalRecipe from '@/components/SeasonalRecipe.vue'
 import  GenreMenu from '@/components/GenreMenu.vue'
 // import  Recipe from '@/components/Recipe.vue'
 // import  Categories from '@/components/Categories.vue'
@@ -36,6 +38,7 @@ export default {
     GenreMenu,
     Ranking,
     NewRecipe,
+    SeasonalRecipe
     // Recipe,
     // Categories,
     // Choice,
