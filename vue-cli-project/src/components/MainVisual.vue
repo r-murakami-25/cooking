@@ -13,17 +13,17 @@
 
 >
 
-  <slide>
+  <slide class="slide">
     <img src="../assets/mainvisual.jpg" alt="スライド1">
   </slide>
-  <slide>
-    <img src="../assets/dish.jpg" alt="スライド2">
+  <slide class="slide">
+    <img src="../assets/mainvisual_2.jpg" alt="スライド2">
   </slide>
-  <slide>
-    <img src="../assets/mainvisual.jpg" alt="スライド3">
+  <slide class="slide">
+    <img src="../assets/mainvisual_3.jpg" alt="スライド3">
   </slide>
-  <slide>
-    <img src="../assets/mainvisual.jpg" alt="スライド4">
+  <slide class="slide">
+    <img src="../assets/mainvisual_4.jpg" alt="スライド4">
   </slide>
 </carousel>
  
@@ -47,14 +47,21 @@ export default {
 
 <style scoped>
 
- /* #MainVisual{
-  max-width:1200px ;
-  max-height: 500px;
-}
+/* .slide{
+  margin-top: 40px;
+  text-align: center;
+  background: #f5deb3;
+} */
+
 .slide img{
   width: 100%;
-  height:auto;
-}  */
+  height: 35vw;
+  object-fit:cover
+}
 
+/* .VueCarousel-pagination[data-v-438fd353] {
+    width: 80%;
+    text-align: s;
+} */
 
 </style>

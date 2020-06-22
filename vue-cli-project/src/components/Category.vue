@@ -3,8 +3,7 @@
 
 <template>
 <div id="Category">
-     <h1>{{title}}</h1>
-
+    <h2>{{title}}</h2>
     <!-- <ul v-for='category in categorys' v-bind:key="category.id" class="category_ist"> -->
         <!-- <router-link :to="{name:'Categories', params:{categories_id: category.id}}"> -->
         <!-- <router-link to="/Categories"><li>
@@ -19,8 +18,7 @@
     <!-- </ul>  -->
 
      <div v-for="team in teams"  v-bind:key="team.id" class="category_list">
-        {{ team.name }}
-        <ul>
+            <p class="team_name">{{ team.name }}</p>        <ul>
             <li v-for="member in team.members"  v-bind:key="member.id"  class="flex">
                 <router-link :to="{name:'Categories', params:{categories_id: member.id}}"> {{ member.name }}</router-link>
             </li>
@@ -91,9 +89,15 @@ export default{
 
 
 
-h1{
+/* h1{
     width:100%;
     padding: 0 1% 1% 1%;
+} */
+h2{
+    /* padding: 0 1% 1% 0; */
+    width:100%;
+    border-bottom: 1px solid;
+    border-top: 1px solid;
 }
 
 /* .category_ist{
@@ -115,11 +119,21 @@ span{
   display: block;
 }
 
-.flex{
+/* .flex{
     width:50%;
     display: inline-block;
     padding:2% 0;
     
+} */
+
+.flex{
+    width:50%;
+    display: inline-block;
+    padding:2% 0;
+    background: #d6ebff;
+    box-shadow: 0px 0px 0px 5px #d6ebff;
+    border: dashed 2px white;
+
 }
 
 .category_list{

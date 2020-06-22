@@ -107,6 +107,13 @@ export default {
 
 a{
   text-decoration: none;
+  color:black;
+
+}
+
+a:hover{
+    color:black;
+    text-decoration: underline #f5deb3;
 }
 
 ul{
@@ -120,7 +127,7 @@ ul{
   /* font-family: Avenir, Helvetica, Arial, sans-serif;  */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  max-width: 1200px;
+  max-width: 980px;
   margin: 0 auto;
 }
 
@@ -161,6 +168,7 @@ header{
   border-radius: 6px;
   padding:0.5%;
 }
+
 
 .MainRecipe{
     padding:2%;

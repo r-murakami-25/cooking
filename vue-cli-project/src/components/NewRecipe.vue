@@ -47,10 +47,18 @@ export default{
     /* background: coral; */
 }
 
-h2{
+/* h2{
     width:100%;
     padding: 0 1% 1% 1%;
+} */
+
+h2{
+    /* padding: 0 1% 1% 0; */
+    width:100%;
+    border-bottom: 1px solid;
+    border-top: 1px solid;
 }
+
 
 .menu{
     width:45%;

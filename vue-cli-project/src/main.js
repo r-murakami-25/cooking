@@ -11,6 +11,7 @@ Vue.config.productionTip = false
 import firebase from "firebase/app"
 import "firebase/auth"
 import "firebase/firestore"
+
 var firebaseConfig = {
   apiKey: "AIzaSyD7F8TCPHLy7omQhWDTNsrJ4_o6RJp6V9Y",
   authDomain: "my-portfolio-9973f.firebaseapp.com",
@@ -28,6 +29,8 @@ firebase.initializeApp(firebaseConfig);
 
 //vue.js→firestoreへコレクション追加
 var db = firebase.firestore(); 
+
+// export default firestore
 
 //category追加
 db.collection("category").add({
