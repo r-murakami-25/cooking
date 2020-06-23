@@ -3,10 +3,10 @@
 
 <template>
 <!--<h2>新着レシピ<h2><div id="New_recipe">の中に入るとflexされてしまう。入らないと画面に出ないどうすればよいか-->
-<div id="ramens">
+<div id="SeasonalRecipe">
     <div v-for="item in items" v-bind:key="item.id">
       <!-- <img :src="ramen.imageUrl" /> -->
-      <p>{{item.article}}</p>
+      <p>{{items.title}}</p>
     </div>
 
   </div>
@@ -16,28 +16,28 @@
 <script>
 
 
-import db from '../main.js'
+// import db from '../main.js'
 
 
 export default {
-  name: 'ramens',
+  name: 'SeasonalRecipe',
   data() {
     return {
       items: [],
     }
   },
-  created(){  
-    // fetch data from firestore  
-    db.collection('contents')  
-      .get()  
-      .then(snapshot => {  
-      snapshot.forEach(doc => {  
-          let item = doc.data()  
-          item.id = doc.id  
-          this.items.push(contents)  
-      })  
-    })  
-  },  
+  // created(){  
+  //   // fetch data from firestore  
+  //   db.collection('items')  
+  //     .get()  
+  //     .then(snapshot => {  
+  //     snapshot.forEach(doc => {  
+  //       let item = doc.data()  
+  //       item.id = doc.id  
+  //       this.items.push('items')  
+  //     })  
+  //   })  
+  // },  
 //   mounted() {
 //     db.collection('ramens').get().then(snap => {
 //       const array = [];

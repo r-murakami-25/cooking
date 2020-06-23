@@ -13,7 +13,7 @@ Vue.config.productionTip = false
 // import "firebase/firestore"
 
 // vue.js firestoreでCRUD操作実現
-import * as firebase from 'firebase/app' //変更点 
+import * as firebase from 'firebase/app' //変更点  エラーのexport defort(import as db)is not founded解決、すべて読みこんでいなかったため
 import 'firebase/firestore'  //変更点
 
 
@@ -41,45 +41,45 @@ export const db = firebase.firestore();
 // export default firestore
 
 //category追加
-db.collection("category").add({
-  name1: "キャベツ",
-  name2: "ニンジン",
-  name3: "トマト",
-})
-.then(function(docRef) {
-  console.log("Document written with ID: ", docRef.id);
-})
-.catch(function(error) {
-  console.error("Error adding document: ", error);
-});
+// db.collection("category").add({
+//   name1: "キャベツ",
+//   name2: "ニンジン",
+//   name3: "トマト",
+// })
+// .then(function(docRef) {
+//   console.log("Document written with ID: ", docRef.id);
+// })
+// .catch(function(error) {
+//   console.error("Error adding document: ", error);
+// });
 
 //contents追加
-db.collection("contents").add({
-  article: "写真",
-  title: "ロールキャベツ",
-})
-.then(function(docRef) {
-  console.log("Document written with ID: ", docRef.id);
-})
-.catch(function(error) {
-  console.error("Error adding document: ", error);
-});
+// db.collection("contents").add({
+//   article: "写真",
+//   title: "ロールキャベツ",
+// })
+// .then(function(docRef) {
+//   console.log("Document written with ID: ", docRef.id);
+// })
+// .catch(function(error) {
+//   console.error("Error adding document: ", error);
+// });
 
 //recipe追加
-db.collection("recipe").add({
-  visual: "写真",
-  material: "キャベツ",
-  title: "ロールキャベツ",
-  method: "混ぜる",
-  time: "15",
-  title: "ロールキャベツ",
-})
-.then(function(docRef) {
-  console.log("Document written with ID: ", docRef.id);
-})
-.catch(function(error) {
-  console.error("Error adding document: ", error);
-});
+// db.collection("recipe").add({
+//   visual: "写真",
+//   material: "キャベツ",
+//   title: "ロールキャベツ",
+//   method: "混ぜる",
+//   time: "15",
+//   title: "ロールキャベツ",
+// })
+// .then(function(docRef) {
+//   console.log("Document written with ID: ", docRef.id);
+// })
+// .catch(function(error) {
+//   console.error("Error adding document: ", error);
+// });
 
 
 
