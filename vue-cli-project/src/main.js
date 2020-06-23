@@ -8,9 +8,14 @@ Vue.config.productionTip = false
 //firebase　以下
 // import firebase from 'firebase' このままだとfirebase全てインストールしてしまう、以下必要な物だけインストールすること
 
-import firebase from "firebase/app"
-import "firebase/auth"
-import "firebase/firestore"
+// import firebase from "firebase/app"
+// import "firebase/auth"
+// import "firebase/firestore"
+
+// vue.js firestoreでCRUD操作実現
+import * as firebase from 'firebase/app' //変更点 
+import 'firebase/firestore'  //変更点
+
 
 var firebaseConfig = {
   apiKey: "AIzaSyD7F8TCPHLy7omQhWDTNsrJ4_o6RJp6V9Y",
@@ -24,11 +29,14 @@ var firebaseConfig = {
 
 
 // Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+// firebase.initializeApp(firebaseConfig);
+const firebaseApp = firebase.initializeApp(firebaseConfig)  
 
 
 //vue.js→firestoreへコレクション追加
-var db = firebase.firestore(); 
+
+export default firebaseApp.firestore()
+export const db = firebase.firestore();  
 
 // export default firestore
 

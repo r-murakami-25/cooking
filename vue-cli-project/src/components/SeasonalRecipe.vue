@@ -4,9 +4,9 @@
 <template>
 <!--<h2>新着レシピ<h2><div id="New_recipe">の中に入るとflexされてしまう。入らないと画面に出ないどうすればよいか-->
 <div id="ramens">
-    <div v-for="ramen in ramens" v-bind:key="ramen.id">
+    <div v-for="item in items" v-bind:key="item.id">
       <!-- <img :src="ramen.imageUrl" /> -->
-      <p>{{ramen.body}}</p>
+      <p>{{item.article}}</p>
     </div>
 
   </div>
@@ -23,22 +23,21 @@ export default {
   name: 'ramens',
   data() {
     return {
-      ramens: []
+      items: [],
     }
   },
-  created(){
-    db.collection('ramens').onSnapshot(snapshot =>{
-        this.ramens =[]
-        snapshot.forEach(doc =>{
-            let d= doc.data();
-            this.ramens.push({
-                id:doc.id,
-                data:d.data,
-                // title:d.title
-            })
-        })
-    })
-  }
+  created(){  
+    // fetch data from firestore  
+    db.collection('contents')  
+      .get()  
+      .then(snapshot => {  
+      snapshot.forEach(doc => {  
+          let item = doc.data()  
+          item.id = doc.id  
+          this.items.push(contents)  
+      })  
+    })  
+  },  
 //   mounted() {
 //     db.collection('ramens').get().then(snap => {
 //       const array = [];

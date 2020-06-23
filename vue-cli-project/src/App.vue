@@ -52,7 +52,7 @@
   </div>
 </template>
 
-// firebase以下 
+//  firebase以下 
 <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-app.js"></script>
 
