@@ -3,51 +3,46 @@
 
 <template>
 <!--<h2>新着レシピ<h2><div id="New_recipe">の中に入るとflexされてしまう。入らないと画面に出ないどうすればよいか-->
-<div id="SeasonalRecipe">
-    <div v-for="item in items" v-bind:key="item.id">
-      <!-- <img :src="ramen.imageUrl" /> -->
-      <p>{{items.title}}</p>
+<div id="NewRecipe">
+    <div class="MainRecipe">
+        <h2>旬のレシピ</h2>
+        <!-- imgとfirebase結びつける方法 -->
+        <div class="menu" v-for="item in items" v-bind:key="item.id">
+             <p><img src="../assets/mainvisual.jpg" alt="新着レシピ"></p>
+        <h3>{{item.title}}</h3>
+        </div>
     </div>
-
-  </div>
+</div>
     
 </template>
 
 <script>
+// https://bbbbruno.qrunch.io/entries/YDTE4pZ0erk9uAcQ
+// Vue.js + firestoreでCRUD操作を実現を参考
 
+import db from '../main.js'
 
-// import db from '../main.js'
-
-
-export default {
-  name: 'SeasonalRecipe',
-  data() {
-    return {
-      items: [],
-    }
-  },
-  // created(){  
-  //   // fetch data from firestore  
-  //   db.collection('items')  
-  //     .get()  
-  //     .then(snapshot => {  
-  //     snapshot.forEach(doc => {  
-  //       let item = doc.data()  
-  //       item.id = doc.id  
-  //       this.items.push('items')  
-  //     })  
-  //   })  
-  // },  
-//   mounted() {
-//     db.collection('ramens').get().then(snap => {
-//       const array = [];
-//       snap.forEach(doc => {
-//         array.push(doc.data());
-//       });
-//       this.ramens = array
-//     });
-//   }
-}
+export default {  
+  data() {  
+    return {  
+    name:"NewRecipe",
+      items: [],  
+    }  
+  },  
+  created() {  
+    // fetch data from firestore  
+    db.collection('items')  
+      .where("category", "==", "肉")
+      .get()  
+      .then(snapshot => {  
+        snapshot.forEach(doc => {  
+          let items = doc.data()  //item→itemsにしたら起動した
+          items.id = doc.id  //item→itemsにしたら起動した
+          this.items.push(items)  
+        })  
+      })  
+  },  
+}  
 // export default{
 //     name:"NewRecipe",
 //     data(){

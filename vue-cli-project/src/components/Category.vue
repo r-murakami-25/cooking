@@ -17,22 +17,48 @@
         <!-- </router-link> -->
     <!-- </ul>  -->
 
-     <div v-for="team in teams"  v-bind:key="team.id" class="category_list">
-            <p class="team_name">{{ team.name }}</p>        <ul>
+     <div v-for="item in items"  v-bind:key="item.id" class="category_list">
+            <p class="team_name">{{ item.title }}</p>       
+         <!-- <ul>
             <li v-for="member in team.members"  v-bind:key="member.id"  class="flex">
                 <router-link :to="{name:'Categories', params:{categories_id: member.id}}"> {{ member.name }}</router-link>
             </li>
-        </ul>
+        </ul> -->
     </div> 
 </div>
 </template>
 
 <script>
-export default{
-    name:"Category",
-    data(){
-        return{
-             title: 'カテゴリー一覧',
+import db from '../main.js'
+
+export default {  
+  data() {  
+    return {  
+    name:"NewRecipe",
+      items: [],  
+      title:"カテゴリー"
+    }  
+  },  
+  created() {  
+    // fetch data from firestore  
+    db.collection('items')  
+      .where("category", "==", "肉")
+      .get()  
+      .then(snapshot => {  
+        snapshot.forEach(doc => {  
+          let items = doc.data()  //item→itemsにしたら起動した
+          items.id = doc.id  //item→itemsにしたら起動した
+          this.items.push(items)  
+        })  
+      })  
+  },  
+}  
+
+// export default{
+//     name:"Category",
+//     data(){
+//         return{
+//              title: 'カテゴリー一覧',
             //  categorys:[
             //  {id:1, name:'野菜', menu:['キャベツ', 'ニンジン', 'トマト', 'ダイコン','ホウレンソウ']},
             //  {id:2, name:'肉',  menu: ['鶏肉', '牛肉', '豚肉']},
@@ -41,38 +67,39 @@ export default{
 
             //   ]
 
-            teams: [
-            {
-                 name: '野菜',
-                 members: [
-                     { id:1, 'name': 'キャベツ'}, { id:2,'name': 'ニンジン'},{ id:3,'name': 'トマト'},{id:4,'name': 'ダイコン'},
-                     { id:5, 'name': 'ホウレンソウ'},{ id:6, 'name': 'ジャガイモ'},
-                 ]
-             },
-            {
-                 name: '肉',
-                 members: [
-                     { id:6, 'name': '鶏肉'}, { id:7,'name': '豚肉'},{id:8,'name': '牛肉'}
-                 ]
-             },
-             {
-                 name: '魚',
-                 members: [
-                     { id:9, 'name': '白身魚'}, { id:10,'name': '赤身魚'},{id:11,'name': '貝'},{id:12,'name': 'エビ'},
-                     { id:13,'name': '海藻'},
-                 ]
-             },
-             {
-                 name: '豆',
-                 members: [
-                     { id:14, 'name': '豆腐'}, {id:15, 'name': '大豆'}
-                 ]
-             },
-         ]
-        };
-    }
+//             teams: [
+//             {
+//                  name: '野菜',
+//                  members: [
+//                      { id:1, 'name': 'キャベツ'}, { id:2,'name': 'ニンジン'},{ id:3,'name': 'トマト'},{id:4,'name': 'ダイコン'},
+//                      { id:5, 'name': 'ホウレンソウ'},{ id:6, 'name': 'ジャガイモ'},
+//                  ]
+//              },
+//             {
+//                  name: '肉',
+//                  members: [
+//                      { id:6, 'name': '鶏肉'}, { id:7,'name': '豚肉'},{id:8,'name': '牛肉'}
+//                  ]
+//              },
+//              {
+//                  name: '魚',
+//                  members: [
+//                      { id:9, 'name': '白身魚'}, { id:10,'name': '赤身魚'},{id:11,'name': '貝'},{id:12,'name': 'エビ'},
+//                      { id:13,'name': '海藻'},
+//                  ]
+//              },
+//              {
+//                  name: '豆',
+//                  members: [
+//                      { id:14, 'name': '豆腐'}, {id:15, 'name': '大豆'}
+//                  ]
+//              },
+//          ]
+//         };
+//     }
 
-}
+// }
+
 </script>
 
 
