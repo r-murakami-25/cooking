@@ -12,6 +12,7 @@
 // @ is an alias to /src
 
 import  Categories from '@/components/Categories.vue'
+// import axios from 'axios'
 
 export default {
   // name: 'Company',
