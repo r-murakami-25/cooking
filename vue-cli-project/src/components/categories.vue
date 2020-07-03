@@ -8,12 +8,12 @@
     
     <!-- <h5>Firebase 検索時　2階層目</h5> これもの中に入るとflexされてしまう。入らないと画面に出ないどうすればよいか-->
     <div class="MainCategories">
-         <h2>キャベツのレシピ</h2>
-        
-            <div class="categories_list" v-for="item in list" v-bind:key="item.id">
-                 <router-link :to="{name:'Recipe', params:{recipe_id: item.id}}"> 
+         <!-- 疑問）タイトルもv-forしたいがネストするべきか？component/category.vueみたいに -->
+        <h2>キャベツのレシピ</h2>
+            <div class="categories_list" v-for="item in items" v-bind:key="item.id">
+                 <router-link :to="{name:'Recipe', params:{recipe_id: item.title}}"> 
                     <p id="mainVisual"><img src="../assets/mainvisual.jpg" alt="mainVisual" ></p>
-                    <h2>{{ item.name}}</h2>
+                    <h2>{{ item.title}}</h2>
                 </router-link> 
             </div>
        
@@ -24,21 +24,39 @@
 </template>
 
 <script>
+import db from '../main.js'
+
 export default{
     name:"Categories",
     data(){
         return{
-            list:[
-                {id:1, name:'キャベツチーズ'},
-                {id:2, name:'餃子'},
-                {id:3, name:'コールスロー'},
-                {id:4, name:'キャベツサラダ'},
-                {id:5, name:'お浸し'},
-                {id:6, name:'ロールキャベツ'},
+            // list:[
+            //     {id:1, name:'キャベツチーズ'},
+            //     {id:2, name:'餃子'},
+            //     {id:3, name:'コールスロー'},
+            //     {id:4, name:'キャベツサラダ'},
+            //     {id:5, name:'お浸し'},
+            //     {id:6, name:'ロールキャベツ'},
                
-            ]
+            // ]
+            title:[],
+            items:[]
         };
+    },
+    mounted() {  
+    // fetch data from firestore  
+    db.collection('items')  
+      .where("slug", "==", "cabbage")
+      .get()  
+      .then(snapshot => {  
+        snapshot.forEach(doc => {  
+          let items = doc.data()  //item→itemsにしたら起動した
+          items.id = doc.id  //item→itemsにしたら起動した
+          this.items.push(items)  
+        })  
+      })
     }
+
 
 }
 </script>
