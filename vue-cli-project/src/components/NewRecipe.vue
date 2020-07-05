@@ -6,10 +6,13 @@
 <div id="NewRecipe">
     <div class="MainRecipe">
         <h2>新着レシピ</h2>
-        <div class="menu" v-for="item in items" v-bind:key="item.id">
-             <p><img src="../assets/mainvisual.jpg" alt="新着レシピ"></p>
-        <h3>{{item.title}}</h3>
-        </div>
+      <div class="menu" v-for="item in items" v-bind:key="item.id">
+        <router-link :to="{name:'Recipe', params:{recipe_id: item.title}}"> 
+              <p><img src="../assets/mainvisual.jpg" alt="新着レシピ"></p>
+          <h3>{{item.title}}</h3>
+        </router-link>
+      </div>
+      
     </div>
 </div>
     

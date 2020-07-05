@@ -11,7 +11,7 @@
          <!-- 疑問）タイトルもv-forしたいがネストするべきか？component/category.vueみたいに -->
         <h2>キャベツのレシピ</h2>
             <div class="categories_list" v-for="item in items" v-bind:key="item.id">
-                 <router-link :to="{name:'Recipe', params:{recipe_id: item.title}}"> 
+                 <router-link :to="{name:'Recipe', params:{recipe_id: item.slug}}"> 
                     <p id="mainVisual"><img src="../assets/mainvisual.jpg" alt="mainVisual" ></p>
                     <h2>{{ item.title}}</h2>
                 </router-link> 
@@ -39,14 +39,31 @@ export default{
             //     {id:6, name:'ロールキャベツ'},
                
             // ]
-            title:[],
+            // title:[],
             items:[]
         };
     },
-    mounted() {  
+    mounted() { 
+
+        // db.collection('items')
+    //   .where("slug", "array-contains","cabbage")
+    //   .get()
+    //   .then((querySnapshot) => {
+    //     querySnapshot.forEach((doc) => {
+    //       let items = {
+    //         'slug': doc.data().slug,
+    //         'name': doc.data().name,
+    //         'title': doc.data().title,
+    //       }
+    //       this.items.push(items)
+       
+    //     })
+    //   })
+     
     // fetch data from firestore  
-    db.collection('items')  
-      .where("slug", "==", "cabbage")
+
+     db.collection('items')  
+    //  .where("slug", "array-contains","cabbage")
       .get()  
       .then(snapshot => {  
         snapshot.forEach(doc => {  
@@ -54,9 +71,8 @@ export default{
           items.id = doc.id  //item→itemsにしたら起動した
           this.items.push(items)  
         })  
-      })
+      })  
     }
-
 
 }
 </script>

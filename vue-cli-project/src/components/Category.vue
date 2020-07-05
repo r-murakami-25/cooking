@@ -132,6 +132,8 @@ export default {
             'slug': doc.data().slug
           }
           this.items.push(items)
+          this.aa.push(items)
+          this.bb.push(items)
        
         })
       })
