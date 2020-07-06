@@ -3,8 +3,7 @@
 
 <template>
 <div id="Category">
-  <h2>{{title}}</h2>
-    <!-- ここから削除するもの -->
+    <h2>{{title}}</h2>
     <!-- <ul v-for='category in categorys' v-bind:key="category.id" class="category_ist"> -->
         <!-- <router-link :to="{name:'Categories', params:{categories_id: category.id}}"> -->
         <!-- <router-link to="/Categories"><li>
@@ -17,59 +16,16 @@
         </router-link> -->
         <!-- </router-link> -->
     <!-- </ul>  -->
-    <!-- 上記まで削除する -->
-
-    <!-- 以下最新 -->
-
-    <p class="team_name">{{ category_1 }}</p>
-     <div v-for="item in items"  v-bind:key="item.id" class="category_list">
-            <p class="team">
-                <router-link :to="{name:'Categories', params:{categories_id: item.slug}}">
-                    {{ item.name }}
-                </router-link>
-            </p>   
-
-        <!-- ここから6/24の分コメントアウト戻す    -->
- <!-- <div v-for="team in teams"  v-bind:key="team.id" class="category_list">
-     <p class="team_name">{{ team.name }}</p>       
-         <ul>
-            <li v-for="member in team.members"  v-bind:key="member.id"  class="flex">
-                <router-link :to="{name:'Categories', params:{categories_id: member.id}}"> {{ member.name }}</router-link>
-            </li>
-        </ul>
-    </div>  -->
-
-        <!-- コメントアウト戻す上記まで -->
-    </div> 
-
-
-    <p class="team_name">{{ category_2 }}</p>
-     <div v-for="a in aa"  v-bind:key="a.id" class="category_list">
-           <p class="team">
-                <router-link :to="{name:'Categories', params:{categories_id: a.slug}}">
-                    {{ a.name }}
-                </router-link>
-            </p>  
-    </div> 
-
-    <p class="team_name">{{ category_3}}</p>
-     <div v-for="b in bb"  v-bind:key="b.id" class="category_list">
-           <p class="team">
-                <router-link :to="{name:'Categories', params:{categories_id: b.slug}}">
-                    {{ b.name }}
-                </router-link>
-            </p>   
-    </div> 
-    <!-- <h2>{{title}}</h2>
 
      <div v-for="category in categories"  v-bind:key="category.id" class="category_list">
              <h3>{{category.name }}</h3> 
+            <!-- <p class="team_name">{{ item.title }}</p>        -->
           <ul>
             <li v-for="item in categories.items"  v-bind:key="item.id"  class="flex">
-                <router-link :to="{name:'Categories', params:{categories_id: item.id}}"> {{ item.name }}</router-link>
+                <router-link :to="{name:'Categories', params:{categories_id: item.id}}"> {{ item.title }}</router-link>
             </li>
         </ul> 
-    </div>  -->
+    </div> 
 </div>
 </template>
 
@@ -80,115 +36,59 @@ export default {
   data() {  
     return {  
     name:"NewRecipe",
-      items: [], 
-      aa:[],
-      bb:[],
-      category_1:"肉",
-      category_2:"野菜",
-      category_3:"魚介類",
+      categories:[
+          {
+              name:'肉',
+              items: [],
+          },
+          {
+              name:'魚',
+              items: [],
+          },
+          {
+              name:'野菜',
+              items: [],
+          },
+          
+      ],
+        
       title:"カテゴリー"
     }  
   },  
-  mounted() {  
-    // fetch data from firestore  
-    db.collection('items')  
-      .where("category", "==", "肉")
-      .get()  
-      .then(snapshot => {  
-        snapshot.forEach(doc => {  
-          let items = doc.data()  //item→itemsにしたら起動した
-          items.id = doc.id  //item→itemsにしたら起動した
-          this.items.push(items)  
-        })  
+  created() {  
+    // fetch data from firestore 
+
+    //categoriesのitems[]に直接アクセス
+    let test= this.categories.map(obj=>obj.items);
+    // console.log(test);
+    //self=this(上記のtestをreference用変数(self)を使って置き換える)参照元→https://qiita.com/shanonim/items/7718556c0fab54a517c2
+    let self = this
+
+    //以下　コレクション（itemsの）一覧取得し、変数dataにドキュメントのフィールドをすべて代入。
+    //変数data=selfで返す　が、結果エラーにならないが、表示できない なぜ？
+
+     db.collection('items')  
+      //  .where("category", "==", "肉")
+      .get()
+      .then(function(querySnapshot) {
+      let data = []
+      querySnapshot.forEach(function(doc) {
+        data.push(doc.data())
+      })
+      self = data
       }) 
 
-      db.collection('items')  
-      .where("category", "==", "野菜")
-      .get()  
-      .then(snapshot => {  
-        snapshot.forEach(doc => {  
-          let items = doc.data()  //item→itemsにしたら起動した
-          items.id = doc.id  //item→itemsにしたら起動した
-          this.aa.push(items)  
-        })  
-      })   
-
-      db.collection('items')  
-      .where("category", "==", "魚介類")
-      .get()  
-      .then(snapshot => {  
-        snapshot.forEach(doc => {  
-          let items = doc.data()  //item→itemsにしたら起動した
-          items.id = doc.id  //item→itemsにしたら起動した
-          this.bb.push(items)  
-        })  
-      })  
-
-      db.collection('items')
-      .get()
-      .then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-          let items = {
-            'slug': doc.data().slug
-          }
-          this.items.push(items)
-          this.aa.push(items)
-          this.bb.push(items)
-       
-        })
-      })
-    
-  },  
-
-  
-
-
-  
-  
+      //  .get()  
+      //  .then(snapshot => {  
+      //    snapshot.forEach(doc => {  
+      //      let items = doc.data()  //item→itemsにしたら起動した
+      //      items.id = doc.id  //item→itemsにしたら起動した
+      //     this.test.push(this.items) //このカテゴリーの中のitemsにコレクションのitemsを入れたいが、エラーでる　promise津会うやり方わからない
+      //    })  
+      //  }) 
+  }
+   
 }  
-// import db from '../main.js'
-
-// export default {  
-//   data() {  
-//     return {  
-//     name:"NewRecipe",
-//     title:"カテゴリー",
-//     categories:[
-//           {
-//               name:'肉',
-//               items: [],
-//           },
-//           {
-//               name:'魚',
-//               items: [],
-//           },
-//           {
-//               name:'野菜',
-//               items: [],
-//           },
-          
-//       ],
-
-//     }  
-//   },  
-//   created () {
-//       db.collection('items').get().then((querySnapshot) => {
-//         querySnapshot.forEach((doc) => {
-//           let items = {
-//             'id': doc.id,
-//             'slug': doc.data().slug,
-//             'name': doc.data().slug
-//           }
-        
-//           this.category.push(items) 
-//         })
-//       })
-//     }
-// }  
-
-//   this.categories.push({'name': doc.data().slug})
-        //   これできない　categories.itemsおかしい？
-
 
 // export default{
 //     name:"Category",
