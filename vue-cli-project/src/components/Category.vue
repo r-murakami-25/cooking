@@ -43,14 +43,18 @@ export default {
     }  
   },  
   created() {  
+    
     // fetch data from firestore 
+    //   var params=this.$route.params['id']
+    //  console.log(params)
+
 
     //categoriesのitems[]に直接アクセス
     let test= this.categories.map(obj=>obj.items);
     //self=this(上記のtestをreference用変数(self)を使って置き換える)参照元→https://qiita.com/shanonim/items/7718556c0fab54a517c2
     // let self = this （ただの「これという意味で、関数を指すことになるtestを指してない」）今回はいらない
 
-    //以下　コレクション（itemsの）一覧取得し、変数dataにドキュメントのフィールドをすべて代入。
+    //以下　コレクション（itemsの）一覧取得し、変数dataにドキュメントのフィールドをすべて代入。 +slug取得　-router-link :toの飛ぶ先-
 
     //カテゴリー"肉"
      db.collection('items')  
@@ -89,21 +93,14 @@ export default {
         this.categories[2].items.push(doc.data())
         console.log(this.categories)
       })
-    })
+    })  
 
-    //slug取得　-router-link :toの飛ぶ先-
-    // db.collection('items')
-    //   .get()
-    //   .then((querySnapshot) => {
-    //     let data = []
-    //     querySnapshot.forEach((doc)=> {
-    //     this.categories[2].items.push(doc.data())
-        
-    //   })
-    // })
+
     
     
-  }
+  },
+
+  
    
 }  
 

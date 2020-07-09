@@ -14,6 +14,7 @@
                  <router-link :to="{name:'Recipe', params:{recipe_id: item.slug}}"> 
                     <p id="mainVisual"><img src="../assets/mainvisual.jpg" alt="mainVisual" ></p>
                     <h2>{{ item.title}}</h2>
+                    <!-- <p>{{categories_id}}</p> -->
                 </router-link> 
             </div>
        
@@ -30,20 +31,28 @@ export default{
     name:"Categories",
     data(){
         return{
-            // list:[
-            //     {id:1, name:'キャベツチーズ'},
-            //     {id:2, name:'餃子'},
-            //     {id:3, name:'コールスロー'},
-            //     {id:4, name:'キャベツサラダ'},
-            //     {id:5, name:'お浸し'},
-            //     {id:6, name:'ロールキャベツ'},
-               
-            // ]
-            // title:[],
-            items:[]
+            items:[],
         };
     },
     mounted() { 
+    //  var pathname = location.pathname;
+    //  alert(pathname);「/」が出る
+// var parameter = location.search;
+// alert(parameter);何もなし
+
+// var name=this.$route.name
+// alert(name);「Categories」取得
+
+// var ok=this.$route.fullPath
+// alert(ok);更新されない場所変えても
+
+var params=this.$route.params.categories_id
+alert(params);
+
+//  var ok=this.$route.path
+//  alert(ok);
+// 「Categories/cabbage」取得
+
 
         // db.collection('items')
     //   .where("slug", "array-contains","cabbage")
@@ -61,20 +70,27 @@ export default{
     //   })
      
     // fetch data from firestore  
+    // var url = location.href ;
 
-     db.collection('items')  
-    //  .where("slug", "array-contains","cabbage")
-      .get()  
-      .then(snapshot => {  
-        snapshot.forEach(doc => {  
-          let items = doc.data()  //item→itemsにしたら起動した
-          items.id = doc.id  //item→itemsにしたら起動した
-          this.items.push(items)  
-        })  
-      })  
+    // console.log(url)
+
+   
+      db.collection('items')  
+    //  .where("slug", "array-contains","this.params")
+       .get()  
+       .then(snapshot => {  
+         snapshot.forEach(doc => {  
+           let items = doc.data()  //item→itemsにしたら起動した
+           items.id = doc.id  //item→itemsにしたら起動した
+           this.items.push(items)  
+         })  
+       })  
     }
 
+    
+
 }
+
 </script>
 
 

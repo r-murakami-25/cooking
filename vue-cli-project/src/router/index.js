@@ -53,7 +53,9 @@ Vue.use(VueRouter)
   {
     path: '/Categories/:categories_id',
     name: 'Categories',
-    component: Categories
+    component: Categories,
+    // props:true
+    // props: route => ({ id: Number(route.params.id) })
   },
   {
     path: '/Genre',
