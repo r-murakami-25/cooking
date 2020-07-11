@@ -8,7 +8,7 @@
         <h2>旬のレシピ</h2>
         <!-- imgとfirebase結びつける方法 -->
         <div class="menu" v-for="item in items" v-bind:key="item.id">
-             <p><img src="../assets/mainvisual.jpg" alt="新着レシピ"></p>
+             <p><img v-bind:src="item.img"  alt="旬のレシピ" class=img ></p>
         <h3>{{item.title}}</h3>
         </div>
     </div>
@@ -91,6 +91,13 @@ h2{
     width:45%;
     padding:2% 0;
 }
+
+.img{
+  width: 100%;
+  height: 30vw;
+  object-fit:cover
+}
+
 
 
 

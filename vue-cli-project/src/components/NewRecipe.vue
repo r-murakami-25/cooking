@@ -8,7 +8,7 @@
         <h2>新着レシピ</h2>
       <div class="menu" v-for="item in items" v-bind:key="item.id">
         <router-link :to="{name:'Recipe', params:{recipe_id: item.title}}"> 
-              <p><img src="../assets/mainvisual.jpg" alt="新着レシピ"></p>
+              <p><img v-bind:src="item.img"  alt="新着レシピ" class=img ></p>
           <h3>{{item.title}}</h3>
         </router-link>
       </div>
@@ -92,6 +92,13 @@ h2{
     width:45%;
     padding:2% 0;
 }
+
+.img{
+  width: 100%;
+  height: 30vw;
+  object-fit:cover
+}
+
 
 
 

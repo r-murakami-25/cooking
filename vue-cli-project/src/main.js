@@ -13,8 +13,10 @@ Vue.config.productionTip = false
 // import "firebase/firestore"
 
 // vue.js firestoreでCRUD操作実現
+
 import * as firebase from 'firebase/app' //変更点  エラーのexport defort(import as db)is not founded解決、すべて読みこんでいなかったため
-import 'firebase/firestore'  //変更点
+import 'firebase/firestore' //変更点
+import "firebase/storage"; //追加 7/11
 
 
 var firebaseConfig = {

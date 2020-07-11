@@ -52,7 +52,7 @@
   </div>
 </template>
 
-//  firebase以下 
+  // firebase以下 
 <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-app.js"></script>
 
@@ -60,8 +60,9 @@
      https://firebase.google.com/docs/web/setup#available-libraries -->
 
 
-//App.vue以下
+
 <script>
+//App.vue以下
 import Home from'./components/Home.vue'
 // import categories from'./components/categories.vue'
 // import recipe from'./components/recipe.vue'

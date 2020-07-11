@@ -7,7 +7,7 @@
     <div class="rank" v-for="item in items" v-bind:key="item.id">
      <router-link :to="{name:'Recipe', params:{recipe_id: item.title}}"> 
             <div class="rank_list"> 
-                <p class="rank_picture"><img src="../assets/raning_1.jpg" alt="ランキング"></p>
+                <p class="rank_picture"><img v-bind:src="item.img" alt="ランキング" class=img ></p>
                 <div class="rank_description">
                         <p>{{item.rank}}位</p>
                         <p>{{item.title}}</p>
@@ -97,6 +97,11 @@ h2{
     display: inline-block;
 }
 
+.img{
+  width: 100%;
+  height: 20vw;
+  object-fit:cover
+}
 
 /* .rank_list{
     width:25%;

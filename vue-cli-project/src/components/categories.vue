@@ -12,10 +12,11 @@
         <h2>キャベツのレシピ</h2>
             <div class="categories_list" v-for="item in items" v-bind:key="item.id">
                  <router-link :to="{name:'Recipe', params:{recipe_id: item.slug}}"> 
-                    <p id="mainVisual"><img src="../assets/mainvisual.jpg" alt="mainVisual" ></p>
+                    <p id="mainVisual"><img v-bind:src="item.img"  alt="mainVisual" class=img ></p>
                     <h2>{{ item.title}}</h2>
                     <!-- <p>{{categories_id}}</p> -->
                 </router-link> 
+                
             </div>
        
     </div>
@@ -75,7 +76,8 @@ alert(params);
     // console.log(url)
 
    
-      db.collection('items')  
+      db.collection('items') 
+       
     //  .where("slug", "array-contains","this.params")
        .get()  
        .then(snapshot => {  
@@ -149,6 +151,12 @@ h2{
     width:45%;
     padding:2% 0;
     display: inline-block;
+}
+
+.img{
+  width: 100%;
+  height: 30vw;
+  object-fit:cover
 }
 
 
