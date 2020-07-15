@@ -6,7 +6,6 @@
 <div id="NewRecipe">
     <div class="MainRecipe">
         <h2>旬のレシピ</h2>
-        <!-- imgとfirebase結びつける方法 -->
         <div class="menu" v-for="item in items" v-bind:key="item.id">
              <p><img v-bind:src="item.img"  alt="旬のレシピ" class=img ></p>
         <h3>{{item.title}}</h3>

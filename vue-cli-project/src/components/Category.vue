@@ -12,6 +12,7 @@
                 <router-link :to="{name:'Categories', params:{categories_id: item.slug}}"> {{ item.name }}</router-link>
             </li>
         </ul> 
+        
     </div> 
 </div>
 </template>
@@ -19,10 +20,12 @@
 <script>
 import db from '../main.js'
 
-export default {  
+export default { 
+   
   data() {  
     return {  
     name:"NewRecipe",
+    
       categories:[
           {
               name:'肉',
@@ -47,7 +50,7 @@ export default {
     // fetch data from firestore 
     //   var params=this.$route.params['id']
     //  console.log(params)
-
+    
 
     //categoriesのitems[]に直接アクセス
     let test= this.categories.map(obj=>obj.items);

@@ -59,6 +59,13 @@ export default {
   object-fit:cover
 }
 
+/* .VueCarousel-pagination{
+  background:pink;
+}
+.VueCarousel-dot-container{
+  background:pink;
+} */
+
 /* .VueCarousel-pagination[data-v-438fd353] {
     width: 80%;
     text-align: s;

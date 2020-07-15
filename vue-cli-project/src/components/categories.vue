@@ -16,7 +16,7 @@
                     <h2>{{ item.title}}</h2>
                     <!-- <p>{{categories_id}}</p> -->
                 </router-link> 
-                
+                <!-- <p>これは{{categories_id}}</p> -->
             </div>
        
     </div>
@@ -27,9 +27,13 @@
 
 <script>
 import db from '../main.js'
+import {SLUG_CATEGORY_TABLE} from '../constants/slugCategoryTable'
 
 export default{
     name:"Categories",
+    // props:{
+    //     categories_id:Number
+    //      }, 
     data(){
         return{
             items:[],
@@ -47,9 +51,7 @@ export default{
 // var ok=this.$route.fullPath
 // alert(ok);更新されない場所変えても
 
-var params=this.$route.params.categories_id
-alert(params);
-
+  
 //  var ok=this.$route.path
 //  alert(ok);
 // 「Categories/cabbage」取得
@@ -75,16 +77,21 @@ alert(params);
 
     // console.log(url)
 
-   
+    var params=this.$route.params.categories_id
+    alert(params);
+    alert(SLUG_CATEGORY_TABLE[params])
+
+
       db.collection('items') 
        
-    //  .where("slug", "array-contains","this.params")
+      .where("slug", "==",params)
        .get()  
        .then(snapshot => {  
          snapshot.forEach(doc => {  
-           let items = doc.data()  //item→itemsにしたら起動した
-           items.id = doc.id  //item→itemsにしたら起動した
-           this.items.push(items)  
+           let item = doc.data()  //item
+           item.id = doc.id  //item
+           console.log("item",item)
+           this.items.push(item)  
          })  
        })  
     }
