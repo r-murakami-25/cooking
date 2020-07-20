@@ -71,7 +71,7 @@ Vue.use(VueRouter)
 
  {
     path: '/Recipe/:recipe_id',
-     name:'Recipe',
+    name:'Recipe',
     component: Recipe
 },
 

@@ -9,7 +9,9 @@
     <!-- <h5>Firebase 検索時　2階層目</h5> これもの中に入るとflexされてしまう。入らないと画面に出ないどうすればよいか-->
     <div class="MainCategories">
          <!-- 疑問）タイトルもv-forしたいがネストするべきか？component/category.vueみたいに -->
-        <h2>キャベツのレシピ</h2>
+       
+       <!-- 質問a -->
+        <!-- <h2>{{a}}</h2> -->
             <div class="categories_list" v-for="item in items" v-bind:key="item.id">
                  <router-link :to="{name:'Recipe', params:{recipe_id: item.slug}}"> 
                     <p id="mainVisual"><img v-bind:src="item.img"  alt="mainVisual" class=img ></p>
@@ -37,6 +39,8 @@ export default{
     data(){
         return{
             items:[],
+            //  a:[]
+           
         };
     },
     mounted() { 
@@ -77,9 +81,33 @@ export default{
 
     // console.log(url)
 
+
     var params=this.$route.params.categories_id
     alert(params);
-    alert(SLUG_CATEGORY_TABLE[params])
+    alert(SLUG_CATEGORY_TABLE[params])//(SLUG_CATEGORY_TABLE[params])の[params]よくわからない
+
+
+    //わからない7/18
+    // パターン1）SLUG_CATEGORY_TABLE[params]＝subparamsとしてsubparamsを配列aに入れて表示　文字列にならない
+
+    // var subparams=SLUG_CATEGORY_TABLE[params]
+    // console.log(subparams)
+    // this.a.push(subparams) 
+    
+    
+    // パターン2　firestoreのcategoryとsubparamsをイコールにして配列aにいれる
+    // db.collection('items') 
+       
+    //     .where("category", "==",subparams)
+    //    .get()  
+    //    .then(snapshot => {  
+    //      snapshot.forEach(doc => {  
+    //        let item = doc.data()  //item
+    //        item.id = doc.id  //item
+    //        console.log("item",item)
+    //        this.a.push(item)  
+    //      })  
+    //    })  
 
 
       db.collection('items') 
@@ -94,6 +122,8 @@ export default{
            this.items.push(item)  
          })  
        })  
+
+        
     }
 
     

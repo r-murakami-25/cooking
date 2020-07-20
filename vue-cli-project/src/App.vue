@@ -9,17 +9,17 @@
         <h1 class="logo"><router-link to="/"><img src="./assets/logo.gif" alt="ロゴ"></router-link></h1>
         <nav class="Navigation">
           <ul>
-            <li><router-link to="/Categories">カテゴリー</router-link></li>
-            <li><router-link to="/Genre">ジャンル</router-link></li>
+            <!-- <li><router-link to="/Categories">カテゴリー</router-link></li> -->
+            <!-- <li><router-link to="/Genre">ジャンル</router-link></li> -->
           </ul>
         </nav>
         
-        <input type="text" class="search_box" placeholder="料理名・食材でレシピをさがす" value="">
-
+        <!-- <input type="text" class="search_box" placeholder="料理名・食材でレシピをさがす" value=""> -->
+        
     </header>
 
     <router-view/>
-    
+
     <!-- <router-view/> -->
     
     <!-- <div class="categories_main">
@@ -64,6 +64,7 @@
 <script>
 //App.vue以下
 import Home from'./components/Home.vue'
+// import Search from'./components/Search.vue'
 // import categories from'./components/categories.vue'
 // import recipe from'./components/recipe.vue'
 
@@ -71,6 +72,7 @@ export default {
   name:'app',
   components:{
     Home:Home,
+    // Search:Search
     // categories:categories,
     // recipe:recipe
   },
@@ -159,16 +161,6 @@ header{
   width: 30%;
 }
 
-
-
-.search_box{
-  display: block;
-  margin: 0 auto;
-  width:80%;
-  background:#ffffff;
-  border-radius: 6px;
-  padding:0.5%;
-}
 
 
 .MainRecipe{

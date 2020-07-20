@@ -1,2 +1,2 @@
 
-export const SLUG_CATEGORY_TABLE={beef:"肉",checken:"鶏肉"}
+export const SLUG_CATEGORY_TABLE={beef:"牛肉",checken:"鶏肉"}
