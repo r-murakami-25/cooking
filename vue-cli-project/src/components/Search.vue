@@ -8,8 +8,7 @@
         <tr v-for="user in filteredUsers" v-bind:key="user.id">
             <!-- <td v-text="user.id"></td> -->
           <!-- <router-link :to="{name:'Categories', params:{categories_id: user.slug}}">  -->
-          <router-link :to="{name:'Recipe', params:{recipe_id: user.slug}}"> 
-
+          <router-link :to="{name:'Categories', params:{categories_id: user.slug}}">                
             <td v-text="user.title"></td>
             <!-- <td v-text="user.name"></td>  -->
           </router-link>
@@ -66,17 +65,25 @@ export default{
         //質問　input欄に一度入力してから空白にするとfirestoreに入力したすべてが表示されてしまう。
         //→はじめ空白→入力したものとfirestoreのドキュメント一致したら表示→入力けしたら空白　にしたい
         //v-if　初期値false→一致したら表示　trueに→入力けしたら　falseにするべきか？記述不明
+
+
+        //enterキー押したら、v-if(入力した文字[this.keyword]==i.name またはi.titleの時)→categoriesページに遷移　v-else([this.keyword]==! i.name またはi.titleの時)→「見つかりません」
+        //
         methods: {
-           onKeypressEnter: function() {
+        onKeypressEnter() {
+        //   this.filteredUsers = [];
+        // if( i.name==this.keyword){
+        //   this.$router.push( '/Categories/:categories_id')
+          //URLに飛ぶ
 
-        alert('Entrキーが押されました')
-        }
-}
+        // }else{
+        //  alert('見つかりません')
+        // }
+                 alert('Entrキーが押されました')
 
+      }
 
-
-
-
+    }
       //clickしたらCategoriesページに飛ぶ
   //     methods: {
   //      textBoxClicked() {
