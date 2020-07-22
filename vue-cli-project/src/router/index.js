@@ -8,6 +8,7 @@ import Categories from '../views/Categories.vue'
 import　Genre　from '../views/Genre.vue'
 import　Recipe　from '../views/Recipe.vue'
 
+
 // import Choice from '../views/Choice.vue'
 
 

@@ -86,7 +86,7 @@ export default{
 
     }
 
-    // methods: {
+    // methods: {//以下先生の回答
     //     onKeypressEnter() {
     //        this.filteredUsers = [];
     //             for(let i of this.users){//配列usersの中のオブジェクト（i）を1個ずつ繰り返す
