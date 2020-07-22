@@ -207,13 +207,12 @@ span{
 } */
 
 .flex{
-    width:50%;
+    width: 50%;
     display: inline-block;
-    padding:2% 0;
-    background: #d6ebff;
-    box-shadow: 0px 0px 0px 5px #d6ebff;
-    border: dashed 2px white;
-
+    padding: 2%;
+    background: #f5deb3;
+    box-shadow: 0px 0px 0px 1px #f5deb3;
+    border: dashed 1px white;
 }
 
 .category_list{

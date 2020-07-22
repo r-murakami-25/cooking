@@ -11,7 +11,7 @@
          <!-- 疑問）タイトルもv-forしたいがネストするべきか？component/category.vueみたいに -->
        
        <!-- 質問a -->
-        <!-- <h2>{{a}}</h2> -->
+        <h2>{{a.length>0?a[0]:"カテゴリー未設定"}}</h2> 
             <div class="categories_list" v-for="item in items" v-bind:key="item.id">
                  <router-link :to="{name:'Recipe', params:{recipe_id: item.slug}}"> 
                     <p id="mainVisual"><img v-bind:src="item.img"  alt="mainVisual" class=img ></p>
@@ -39,7 +39,7 @@ export default{
     data(){
         return{
             items:[],
-            //  a:[]
+          a:[]
            
         };
     },
@@ -90,9 +90,9 @@ export default{
     //わからない7/18
     // パターン1）SLUG_CATEGORY_TABLE[params]＝subparamsとしてsubparamsを配列aに入れて表示　文字列にならない
 
-    // var subparams=SLUG_CATEGORY_TABLE[params]
-    // console.log(subparams)
-    // this.a.push(subparams) 
+     var subparams=SLUG_CATEGORY_TABLE[params]
+     console.log(subparams)
+     this.a.push(subparams) 
     
     
     // パターン2　firestoreのcategoryとsubparamsをイコールにして配列aにいれる

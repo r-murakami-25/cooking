@@ -87,7 +87,7 @@ h2{
 
 
 .menu{
-    width:45%;
+    width:30%;
     padding:2% 0;
 }
 
@@ -96,6 +96,15 @@ h2{
   height: 30vw;
   object-fit:cover
 }
+
+@media screen and (max-width: 480px){
+.menu{
+    width:45%;
+    padding:2% 0;
+}
+
+}
+
 
 
 

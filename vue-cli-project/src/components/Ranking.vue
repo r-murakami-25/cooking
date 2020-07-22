@@ -9,7 +9,7 @@
             <div class="rank_list"> 
                 <p class="rank_picture"><img v-bind:src="item.img" alt="ランキング" class=img ></p>
                 <div class="rank_description">
-                        <p>{{item.rank}}位</p>
+                        <p class="ranking">{{item.rank}}位</p>
                         <p>{{item.title}}</p>
                         <p>{{item.time}}分</p>
                     
@@ -80,6 +80,10 @@ h2{
     border-top: 1px solid;
 }
 
+.ranking{
+    font-size:20px ;
+}
+
 
 .rank{
    width:30%;
@@ -97,11 +101,11 @@ h2{
     display: inline-block;
 }
 
-.img{
+/* .img{
   width: 100%;
   height: 20vw;
   object-fit:cover
-}
+} */
 
 /* .rank_list{
     width:25%;
@@ -134,6 +138,10 @@ h2{
     display: inline-block;
     padding:2%;
     /* text-align: center; */
+}
+
+.rank_list{
+    border-bottom: 1px solid;
 }
 
 

@@ -106,6 +106,7 @@ export default {
 * img {
     vertical-align: bottom;
     width:100%;
+    border-radius: 5%;
 }
 
 a{
@@ -122,6 +123,8 @@ a:hover{
 ul{
   list-style: none;
 }
+
+
 
 
 #app {

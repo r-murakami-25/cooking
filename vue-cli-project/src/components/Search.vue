@@ -54,14 +54,15 @@ export default{
              this.filteredUsers = [];
              for(let i of this.users){//配列usersの中のオブジェクト（i）を1個ずつ繰り返す
                 if (i.name.indexOf(val) !== -1){//i.nameまたは、titleテキストボックスの値（value）が-1でなければ（あっていれば）以下
-                //  if (i.name.indexOf(val) !== -1 || i.title.indexOf(val) !== -1){//A||Bの形で左にするとエラー起きる　質問
+                if (i.name.indexOf(val) !== -1 || i.title.indexOf(val) !== -1){//A||Bの形で左にするとエラー起きる　質問
                 this.filteredUsers.push(i);//filteredUsersにiを入れる
-                show:true,
+                // show:true,
                console.log(this.filteredUsers)
                 }
              }
           }
-        },
+        }
+    },
         //質問　input欄に一度入力してから空白にするとfirestoreに入力したすべてが表示されてしまう。
         //→はじめ空白→入力したものとfirestoreのドキュメント一致したら表示→入力けしたら空白　にしたい
         //v-if　初期値false→一致したら表示　trueに→入力けしたら　falseにするべきか？記述不明
@@ -84,6 +85,29 @@ export default{
       }
 
     }
+
+    // methods: {
+    //     onKeypressEnter() {
+    //        this.filteredUsers = [];
+    //             for(let i of this.users){//配列usersの中のオブジェクト（i）を1個ずつ繰り返す
+    //             //if (i.name.indexOf(val) !== -1){//i.nameまたは、titleテキストボックスの値（value）が-1でなければ（あっていれば）以下
+    //             if (i.name.indexOf(val) !== -1 || i.title.indexOf(val) !== -1){//A||Bの形で左にするとエラー起きる　質問
+    //                        this.$router.push( `Categories/${}`)
+
+    //          }
+
+        //  if( i.name==this.keyword){
+        //    this.$router.push( '/Categories/:categories_id')
+          //URLに飛ぶ
+
+        //  }else{
+        //   alert('見つかりません')
+        //  }
+                //  alert('Entrキーが押されました')
+
+    //   }
+
+    // }
       //clickしたらCategoriesページに飛ぶ
   //     methods: {
   //      textBoxClicked() {
