@@ -6,7 +6,7 @@
     <div>
         <p class="mainVisual"><img src="../assets/mainvisual.jpg" alt="mainVisual" ></p> 
         <h2>{{ make }}</h2>
-        <p>{{text}}</p>
+        <p>{{point}}</p>
         <p>{{time}}</p>
         <h2>{{material}}</h2>
         <ul>
@@ -19,8 +19,7 @@
                 {{item.explain}} </li>
         </ol>
 
-        <h3>{{point}}</h3>
-        <p>{{point_detail}}</p>
+        
 
 
     </div> 
@@ -34,12 +33,12 @@ export default{
     data(){
         return{
             make:"タコ飯",
-            text:`初めにタコのやわらか煮をつくり、その煮汁とタコを使用します。お好みでホタテやエビなどの魚介類を入れてもおいしいです`,
+            point:`初めにタコのやわらか煮をつくり、その煮汁とタコを使用します。お好みでホタテやエビなどの魚介類を入れてもおいしいです。バターを足すことでコクを増し、止まらないほどのおいしさに！`,
             time:"80分（タコのやわらか煮:50分、タコ飯:25分）",
             material:"材料",
             cook:"作り方",
             list:[
-                {id:1, name:'タコ（刺身用可', number:'200~300g程'},
+                {id:1,name:'タコ（刺身用可', number:'200~300g程'},
                 {id:2,name:'昆布', number:'2~3枚'},
                 {id:3,name:'醤油', number:'大さじ3杯'},
                 {id:4,name:'砂糖', number:'大さじ2杯'},
@@ -61,8 +60,6 @@ export default{
                 {id:8, explain:'最後にバターを加えて混ぜるとさらにおいしい！'},
                ],
                 
-            point:"ポイント",
-            point_detail:`バターがコクを足し、やめられないほどのおいしさに！`
 
 
             };

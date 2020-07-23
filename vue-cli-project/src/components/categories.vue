@@ -11,7 +11,7 @@
          <!-- 疑問）タイトルもv-forしたいがネストするべきか？component/category.vueみたいに -->
        
        <!-- if文と同じ意味[?] もしタイトルの長さが、0より長ければ、タイトルを表示-->
-        <h2>{{title.length>0?title[0]:"カテゴリー未設定"}}</h2> 
+        <h2>{{title.length>0?title[0]:"カテゴリー未設定"}}のレシピ</h2> 
             <div class="categories_list" v-for="item in items" v-bind:key="item.id">
                  <router-link :to="{name:'Recipe', params:{recipe_id: item.slug}}"> 
                     <p id="mainVisual"><img v-bind:src="item.img"  alt="mainVisual" class=img ></p>
