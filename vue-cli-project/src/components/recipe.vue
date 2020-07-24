@@ -5,15 +5,15 @@
 <div id="Recipe">
     <div>
         <p class="mainVisual"><img src="../assets/mainvisual.jpg" alt="mainVisual" ></p> 
-        <h2>{{ make }}</h2>
+        <h2>{{title.length>0?title[0]:"カテゴリー未設定"}}</h2>
         <p>{{point}}</p>
         <p>{{time}}</p>
-        <h2>{{material}}</h2>
+        <h2>材料</h2>
         <ul>
             <li v-for="item in list" v-bind:key="item.id">
-                {{item.name}} <span>{{item.number}}</span></li>
+                {{item.material}} <span>{{item.amount}}</span></li>
         </ul>
-        <h3>{{cook}}</h3>
+        <h3>作り方</h3>
         <ol>
             <li v-for="item in list_cook" v-bind:key="item.id">
                 {{item.explain}} </li>
@@ -27,27 +27,35 @@
     
 </template>
 
+
+
 <script>
+import db from '../main.js'
+import {SLUG_RECIPE_TABLE} from '../constants/slugRecipeTable'
+
 export default{
     name:"Recipe",
     data(){
         return{
-            make:"タコ飯",
+
+            // items:[],
+            title:[],
+            
+
+            // make:"タコ飯",
             point:`初めにタコのやわらか煮をつくり、その煮汁とタコを使用します。お好みでホタテやエビなどの魚介類を入れてもおいしいです。バターを足すことでコクを増し、止まらないほどのおいしさに！`,
             time:"80分（タコのやわらか煮:50分、タコ飯:25分）",
-            material:"材料",
-            cook:"作り方",
-            list:[
-                {id:1,name:'タコ（刺身用可', number:'200~300g程'},
-                {id:2,name:'昆布', number:'2~3枚'},
-                {id:3,name:'醤油', number:'大さじ3杯'},
-                {id:4,name:'砂糖', number:'大さじ2杯'},
-                {id:5,name:'酒', number:'50ml'},
-                {id:6,name:'水', number:'350ml'},
-                {id:7,name:'米', number:'2,5ごう'},
-                {id:8,name:'油揚げ', number:'2枚'},
-                {id:9,name:'油', number:'小さじ1杯'},
-                {id:10,name:'バター', number:'20g(適量)'},
+            list:[//7/23疑問　どうやってfirestoreに入れる？name同じだけど
+                {id:1,material:'タコ（刺身用可', amount:'200~300g程'},
+                {id:2,material:'昆布', amount:'2~3枚'},
+                {id:3,material:'醤油', amount:'大さじ3杯'},
+                {id:4,material:'砂糖', amount:'大さじ2杯'},
+                {id:5,material:'酒', amount:'50ml'},
+                {id:6,material:'水', amount:'350ml'},
+                {id:7,material:'米', amount:'2,5ごう'},
+                {id:8,material:'油揚げ', amount:'2枚'},
+                {id:9,material:'油', amount:'小さじ1杯'},
+                {id:10,material:'バター', amount:'20g(適量)'},
                 ],
             list_cook:[
                 {id:1, explain:'タコの足を1本ずつ切り分ける（はさみが楽です）'},
@@ -66,6 +74,40 @@ export default{
             
                 
     },
+    mounted() { 
+
+
+    var params=this.$route.params.recipe_id
+    alert(params);
+    alert(SLUG_RECIPE_TABLE[params])//(SLUG_CATEGORY_TABLE[params])の[params]よくわからない
+
+
+    //わからない7/18
+    // パターン1）SLUG_CATEGORY_TABLE[params]＝subparamsとしてsubparamsを配列aに入れて表示　文字列にならない
+
+     var subparams=SLUG_RECIPE_TABLE[params]
+     console.log(subparams)
+     this.title.push(subparams) 
+    
+
+    //   db.collection('items') 
+       
+    //   .where("slug", "==",params)
+    //    .get()  
+    //    .then(snapshot => {  
+    //      snapshot.forEach(doc => {  
+    //        let item = doc.data()  //item
+    //        item.id = doc.id  //item
+    //        console.log("item",item)
+    //        this.items.push(item)  
+    //      })  
+    //    })  
+
+        
+    }
+
+    
+
 
 }
 </script>
