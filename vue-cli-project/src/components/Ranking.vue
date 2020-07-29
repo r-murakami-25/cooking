@@ -5,7 +5,8 @@
 <div id="Ranking">
     <h2>人気ランキング</h2>
     <div class="rank" v-for="item in items" v-bind:key="item.id">
-     <router-link :to="{name:'Recipe', params:{recipe_id: item.title}}"> 
+     <router-link :to="{name:'Recipe', params:{recipe_id: item.recipe_slug}}"> 
+            <!-- <p>{{title.length>0?title[0]:"カテゴリー未設定"}}</p> -->
             <div class="rank_list"> 
                 <p class="rank_picture"><img v-bind:src="item.img" alt="ランキング" class=img ></p>
                 <div class="rank_description">
@@ -27,24 +28,33 @@
 
 <script>
 import db from '../main.js'
+import {SLUG_CATEGORY_TABLE} from '../constants/slugCategoryTable'
+
 
 export default{
     name:"Ranking",
     data(){
         return{
                
-                items:[]
-                    // {id:1, rank:'1', title:'ミニ寿司', time:'30'},
-                    // {id:2, rank:'2', title:'ニンジン', time:'20'},
-                    // {id:3, rank:'3', title:'魚', time:'10'},
-                    // {id:4, rank:'4', title:'魚', time:'10'},
-                    // {id:5, rank:'5', title:'魚', time:'10'},
-                    // {id:6, rank:'6', title:'魚', time:'10'},
-
+                items:[],
+                title:[]
                  
             };
     },
-    mounted() { 
+    mounted() {
+    var params=this.$route.params.categories_id
+    alert(params);
+    alert(SLUG_CATEGORY_TABLE[params])//(SLUG_CATEGORY_TABLE[params])の[params]よくわからない
+
+
+    //わからない7/18
+    // パターン1）SLUG_CATEGORY_TABLE[params]＝subparamsとしてsubparamsを配列aに入れて表示　文字列にならない
+
+     var subparams=SLUG_CATEGORY_TABLE[params]
+     console.log(subparams)
+     this.title.push(subparams) 
+     
+
 
     db.collection('items')
     .where('rank', 'in',['1','2','3'])

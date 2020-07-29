@@ -53,13 +53,13 @@ export default{
          keyword(val){
              this.filteredUsers = [];
              for(let i of this.users){//配列usersの中のオブジェクト（i）を1個ずつ繰り返す
-                if (i.name.indexOf(val) !== -1){//i.nameまたは、titleテキストボックスの値（value）が-1でなければ（あっていれば）以下
+                //i.nameまたは、titleテキストボックスの値（value）が-1でなければ（あっていれば）以下
                 if (i.name.indexOf(val) !== -1 || i.title.indexOf(val) !== -1){//A||Bの形で左にするとエラー起きる　質問
                 this.filteredUsers.push(i);//filteredUsersにiを入れる
                 // show:true,
                console.log(this.filteredUsers)
                 }
-             }
+             
           }
         }
     },

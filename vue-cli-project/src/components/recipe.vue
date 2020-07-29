@@ -14,6 +14,7 @@
                 {{item.material}} <span>{{item.amount}}</span></li>
         </ul>
         <h3>作り方</h3><p>{{items['name']}}</p>
+        <!-- 7/30質問 -->
         <ol>
             <li v-for="item in recipe" v-bind:key="item.id">
                 {{item.explain}} </li>
