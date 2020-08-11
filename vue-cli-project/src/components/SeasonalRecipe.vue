@@ -6,9 +6,11 @@
 <div id="NewRecipe">
     <div class="MainRecipe">
         <h2>旬のレシピ</h2>
-        <div class="menu" v-for="item in items" v-bind:key="item.id">
+        <div class="menu" v-for="item in items" v-bind:key="item.id">         
+            <router-link :to="{name:'Recipe', params:{recipe_id: item.recipe_slug}}"> 
              <p><img v-bind:src="item.img"  alt="旬のレシピ" class=img ></p>
-        <h3>{{item.title}}</h3>
+              <h3>{{item.title}}</h3>
+            </router-link>
         </div>
     </div>
 </div>
@@ -35,9 +37,9 @@ export default {
       .get()  
       .then(snapshot => {  
         snapshot.forEach(doc => {  
-          let items = doc.data()  //item→itemsにしたら起動した
-          items.id = doc.id  //item→itemsにしたら起動した
-          this.items.push(items)  
+          let fields = doc.data()  //item→itemsにしたら起動した
+          fields.id = doc.id  //item→itemsにしたら起動した
+          this.items.push(fields)  
         })  
       })  
   },  

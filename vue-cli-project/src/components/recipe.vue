@@ -9,15 +9,28 @@
         <!-- <p>{{point}}</p>
         <p>{{time}}</p> -->
         <h2>材料</h2>
-        <ul>
-            <li v-for="item in material" v-bind:key="item.id">
-                {{item.material}} <span>{{item.amount}}</span></li>
-        </ul>
-        <h3>作り方</h3><p>{{items['name']}}</p>
+       
+        <div>
+            <div v-for="item in items" v-bind:key="item.id">
+              
+                <div v-for="m in item?item.material:[]" v-bind:key="m?m.name:''">
+                    <p>{{m?m.name:""}}</p>
+                    <p>{{m?m.amount:""}}</p>
+                </div>
+
+                <!-- "m in item?item.material:[]"と"m?m.name:''"はfirestoreに入っていないときに仮のものを作る公式 -->
+                <!-- item?（？左文字があるとき）item.material:[]（右から文字の時） -->
+                <!-- material配列のためv-forすること -->
+                
+            </div>  
+        </div>
+    
+        <!-- <h3>作り方</h3><p>{{items[0].name}}</p> -->
+        <!-- <p>{{items[0]}}</p>  -->
         <!-- 7/30質問 -->
         <ol>
-            <li v-for="item in recipe" v-bind:key="item.id">
-                {{item.explain}} </li>
+            <!-- <li v-for="item in recipe" v-bind:key="item.id">
+                {{item.explain}} </li> -->
         </ol>
 
         
@@ -83,11 +96,15 @@ export default{
     alert(params);
     alert(SLUG_RECIPE_TABLE[params])//(SLUG_CATEGORY_TABLE[params])の[params]よくわからない
 
+// SLUG_RECIPE_TABLE={
+//     octopusrice:"タコ飯",beefbowl:"牛丼",chickenmeatball:"鶏つくね",chickenflakes:"鶏そぼろ丼",grilledfish:"焼き魚",gingerpork:"生姜焼き",deepfriedtatsuta:"赤身魚竜田揚げ",rollcabbage:"ロールキャベツ",friedscallops:"ホタテフライ",
+//     coleslaw:"コールスローサラダ"
+//     }
 
     //わからない7/18
     // パターン1）SLUG_CATEGORY_TABLE[params]＝subparamsとしてsubparamsを配列aに入れて表示　文字列にならない
 
-     var subparams=SLUG_RECIPE_TABLE[params]
+     var subparams=SLUG_RECIPE_TABLE[params]//SLUG_RECIPE_TABLE[0]→タコ
      console.log(subparams)
      this.title.push(subparams) //path=octopasrice=タコライスとなる
     
@@ -104,7 +121,7 @@ export default{
             item.id = doc.id  //item
             console.log("item",item)
             this.items.push(item)  
-            // console.log(items)
+             console.log(this.items)
           })  
        })  
     //    console.log(items['name'])

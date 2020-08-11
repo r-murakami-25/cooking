@@ -9,6 +9,8 @@
     <NewRecipe></NewRecipe>
     <SeasonalRecipe></SeasonalRecipe>
     <Category></Category>
+     <!-- <Carousel :img-list="images"></Carousel>  -->
+
     <!-- <Recipe></Recipe> -->
     <!-- <Categories></Categories> -->
     <!-- <Choice></Choice> -->
@@ -25,6 +27,8 @@ import  Ranking from '@/components/Ranking.vue'
 import  NewRecipe from '@/components/NewRecipe.vue'
 import  SeasonalRecipe from '@/components/SeasonalRecipe.vue'
 import  GenreMenu from '@/components/GenreMenu.vue'
+//  import  Carousel from '@/components/Carousel.vue'
+
 // import  Recipe from '@/components/Recipe.vue'
 // import  Categories from '@/components/Categories.vue'
 // import  Choice from '@/components/Choice.vue'
@@ -39,7 +43,8 @@ export default {
     GenreMenu,
     Ranking,
     NewRecipe,
-    SeasonalRecipe
+    SeasonalRecipe,
+    //  Carousel
     // Recipe,
     // Categories,
     // Choice,

@@ -11,7 +11,7 @@
          <!-- 疑問）タイトルもv-forしたいがネストするべきか？component/category.vueみたいに -->
        
        <!-- if文と同じ意味[?] もしタイトルの長さ[配列]が、0より長ければ、タイトルを表示-->
-        <h2>{{title.length>0?title[0]:"カテゴリー未設定"}}のレシピ</h2> 
+        <h2>{{titles.length>0?titles[0]:"カテゴリー未設定"}}のレシピ</h2> 
             <div class="categories_list" v-for="item in items" v-bind:key="item.id">
                  <router-link :to="{name:'Recipe', params:{recipe_id: item.recipe_slug}}"> 
                     <p id="mainVisual"><img v-bind:src="item.img"  alt="mainVisual" class=img ></p>
@@ -39,60 +39,24 @@ export default{
     data(){
         return{
             items:[],
-            title:[]
+            titles:[]
            
         };
     },
     mounted() { 
-    //  var pathname = location.pathname;
-    //  alert(pathname);「/」が出る
-// var parameter = location.search;
-// alert(parameter);何もなし
-
-// var name=this.$route.name
-// alert(name);「Categories」取得
-
-// var ok=this.$route.fullPath
-// alert(ok);更新されない場所変えても
-
-  
-//  var ok=this.$route.path
-//  alert(ok);
-// 「Categories/cabbage」取得
-
-
-        // db.collection('items')
-    //   .where("slug", "array-contains","cabbage")
-    //   .get()
-    //   .then((querySnapshot) => {
-    //     querySnapshot.forEach((doc) => {
-    //       let items = {
-    //         'slug': doc.data().slug,
-    //         'name': doc.data().name,
-    //         'title': doc.data().title,
-    //       }
-    //       this.items.push(items)
-       
-    //     })
-    //   })
-     
-    // fetch data from firestore  
-    // var url = location.href ;
-
-    // console.log(url)
-
-
-    var params=this.$route.params.categories_id
+        
+    
+    //pathを取得
+    var params=this.$route.params.categories_id//
     alert(params);
-    alert(SLUG_CATEGORY_TABLE[params])//(SLUG_CATEGORY_TABLE[params])の[params]よくわからない
+    //(SLUG_CATEGORY_TABLE[params])の[params]よくわからない
 
-
-    //わからない7/18
     // パターン1）SLUG_CATEGORY_TABLE[params]＝subparamsとしてsubparamsを配列aに入れて表示　文字列にならない
-
-     var subparams=SLUG_CATEGORY_TABLE[params]
+    //SLUG_CATEGORY_TABLEのpathを取得
+     var subparams=SLUG_CATEGORY_TABLE[params]//?調べる
+     alert(subparams)
      console.log(subparams)
-     this.title.push(subparams) 
+     this.titles.push(subparams) 
     
     
     // パターン2　firestoreのcategoryとsubparamsをイコールにして配列aにいれる
@@ -136,40 +100,6 @@ export default{
 
 
 <style scoped>
-/* #mainVisual{
-    width:100%;
-    background:#f5deb3;
-    text-align: center;
-} */
-
-
-
-/* .mainVisual img{
-    width: 100%;
-} */
-
-
-/* #categories{
-    padding: 0.5em 1em;
-    margin: 2em 0;
-    font-weight: bold;
-    border: solid 3px #000000;
-    width:30%;
-    
-} */
-
-/* .MainCategories{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    background: cornflowerblue;
-    padding:2%;
-}
-
-.categories_list{
-    width: 30%;
-    display: inline-block;
-} */
 
 .MainCategories{
     padding:2%;

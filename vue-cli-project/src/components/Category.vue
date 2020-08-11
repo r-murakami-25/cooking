@@ -3,10 +3,10 @@
 
 <template>
 <div id="Category">
-    <h2>{{title}}</h2>
+    <h2>カテゴリー</h2>
 
      <div v-for="category in categories"  v-bind:key="category.id" class="category_list">
-             <h3>{{category.name }}</h3> 
+             <h3>{{category.type }}</h3> 
           <ul>
             <li v-for="item in category.items"  v-bind:key="item.id"  class="flex">
                 <router-link :to="{name:'Categories', params:{categories_id: item.slug}}"> {{ item.name }}</router-link>
@@ -26,23 +26,22 @@ export default {
     return {  
     name:"NewRecipe",
     
-      categories:[
+    categories:[
           {
-              name:'肉',
+              type:'肉',
               items: [],
           },
           {
-              name:'魚',
+              type:'魚介類',
               items: [],
           },
           {
-              name:'野菜',
+              type:'野菜',
               items: [],
           },
           
       ],
         
-      title:"カテゴリー"
     }  
   },  
   created() {  
@@ -53,9 +52,9 @@ export default {
     
 
     //categoriesのitems[]に直接アクセス
-    let test= this.categories.map(obj=>obj.items);
-    //self=this(上記のtestをreference用変数(self)を使って置き換える)参照元→https://qiita.com/shanonim/items/7718556c0fab54a517c2
-    // let self = this （ただの「これという意味で、関数を指すことになるtestを指してない」）今回はいらない
+    let items= this.categories.map(obj=>obj.items);
+    //self=this(上記のitemsをreference用変数(self)を使って置き換える)参照元→https://qiita.com/shanonim/items/7718556c0fab54a517c2
+    // let self = this （ただの「これという意味で、関数を指すことになるitemsを指してない」）今回はいらない
 
     //以下　コレクション（itemsの）一覧取得し、変数dataにドキュメントのフィールドをすべて代入。 +slug取得　-router-link :toの飛ぶ先-
 

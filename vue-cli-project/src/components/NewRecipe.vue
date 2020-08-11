@@ -7,7 +7,7 @@
     <div class="MainRecipe">
         <h2>新着レシピ</h2>
       <div class="menu" v-for="item in items" v-bind:key="item.id">
-        <router-link :to="{name:'Recipe', params:{recipe_id: item.title}}"> 
+        <router-link :to="{name:'Recipe', params:{recipe_id: item.recipe_slug}}"> 
               <p><img v-bind:src="item.img"  alt="新着レシピ" class=img ></p>
           <h3>{{item.title}}</h3>
         </router-link>
