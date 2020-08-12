@@ -6,32 +6,37 @@
     <div>
         <p class="mainVisual"><img src="../assets/mainvisual.jpg" alt="mainVisual" ></p> 
         <h2>{{title.length>0?title[0]:"カテゴリー未設定"}}</h2>
-        <!-- <p>{{point}}</p>
-        <p>{{time}}</p> -->
+        <!-- <p>{{items[0].point}}</p> -->
+        <p>調理時間</p>
+        <!-- <p>{{items[0].time}}</p>   -->
         <h2>材料</h2>
        
-        <div>
-            <div v-for="item in items" v-bind:key="item.id">
+        <ul>
+            <li v-for="item in items" v-bind:key="item.id">
               
-                <div v-for="m in item?item.material:[]" v-bind:key="m?m.name:''">
-                    <p>{{m?m.name:""}}</p>
-                    <p>{{m?m.amount:""}}</p>
-                </div>
+                <ul  class="materials" v-for="material in item?item.materials:[]" v-bind:key="material?material.name:''">
+                    <li>{{material?material.material:""}}</li>
+                    <li>{{material?material.amount:""}}</li>
+                </ul>
+            </li>  
+        </ul>
 
                 <!-- "m in item?item.material:[]"と"m?m.name:''"はfirestoreに入っていないときに仮のものを作る公式 -->
                 <!-- item?（？左文字があるとき）item.material:[]（右から文字の時） -->
                 <!-- material配列のためv-forすること -->
-                
-            </div>  
-        </div>
+            
     
-        <!-- <h3>作り方</h3><p>{{items[0].name}}</p> -->
-        <!-- <p>{{items[0]}}</p>  -->
-        <!-- 7/30質問 -->
-        <ol>
-            <!-- <li v-for="item in recipe" v-bind:key="item.id">
-                {{item.explain}} </li> -->
-        </ol>
+         <h3>作り方</h3>
+         <ul>
+            <li v-for="item in items" v-bind:key="item.id">
+              
+                <ul  class="materials" v-for="c in item?item.cook:[] " v-bind:key="c?c.explain:''">
+                    <li>{{c?c.explain:""}}</li>
+                </ul>
+            </li>  
+        </ul>
+            
+     
 
         
 
@@ -146,9 +151,10 @@ ul{
     list-style: none;
 }
 
-.mainvisual{
-    width:100%;
-    background:#f5deb3;
+.materials{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 
