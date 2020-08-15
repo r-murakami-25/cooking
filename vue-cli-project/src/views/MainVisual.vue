@@ -13,7 +13,6 @@
 
     <!-- <Recipe></Recipe> -->
     <!-- <Categories></Categories> -->
-    <!-- <Choice></Choice> -->
     
   </div>
 </template>
@@ -31,7 +30,6 @@ import  GenreMenu from '@/components/GenreMenu.vue'
 
 // import  Recipe from '@/components/Recipe.vue'
 // import  Categories from '@/components/Categories.vue'
-// import  Choice from '@/components/Choice.vue'
 
 
 export default {
@@ -40,14 +38,14 @@ export default {
     Search,
     MainVisual,
     Category,
-    GenreMenu,
+    GenreMenu,//なし
     Ranking,
     NewRecipe,
     SeasonalRecipe,
     //  Carousel
     // Recipe,
     // Categories,
-    // Choice,
+   
   }
 }
 </script>

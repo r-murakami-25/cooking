@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
-import tool from '../views/tool.vue'
+import Policy from '../views/Policy.vue'
+import Tool from '../views/Tool.vue'
 import Company from '../views/Company.vue'
 import MainVisual from '../views/MainVisual.vue'
 import Categories from '../views/Categories.vue'
@@ -32,12 +32,12 @@ Vue.use(VueRouter)
     // Choice:Choice
   },
   {
-    path: '/Home',
-    component: Home
+    path: '/Policy',
+    component: Policy
   },
   {
-    path: '/tool',
-    component:tool
+    path: '/Tool',
+    component:Tool
     
   },
   {

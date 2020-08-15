@@ -37,8 +37,8 @@
     <footer class="footer">
 
       <ul class=footer_nav>
-        <li><router-link to="/Home">ポリシー</router-link></li>
-        <li><router-link to="/tool">利用規約</router-link></li>
+        <li><router-link to="/Policy">ポリシー</router-link></li>
+        <li><router-link to="/Tool">利用規約</router-link></li>
         <li><router-link to="/Company">会社概要</router-link></li>
       </ul>
 
@@ -63,7 +63,7 @@
 
 <script>
 //App.vue以下
-import Home from'./components/Home.vue'
+// import Home from'./components/Home.vue'
 // import Search from'./components/Search.vue'
 // import categories from'./components/categories.vue'
 // import recipe from'./components/recipe.vue'
@@ -71,7 +71,7 @@ import Home from'./components/Home.vue'
 export default {
   name:'app',
   components:{
-    Home:Home,
+    // Home:Home,
     // Search:Search
     // categories:categories,
     // recipe:recipe

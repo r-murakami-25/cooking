@@ -1,7 +1,7 @@
 <!-- index.html>App.vue>view(Home.vue)-->
 
 <template>
-  <div class="home">
+  <div class="Policy">
     <Policy></Policy>
    
     

@@ -1,5 +1,5 @@
 <template>
-  <div class="tool">
+  <div class="Tool">
     <Terms></Terms>
   </div>
 </template>
@@ -10,7 +10,7 @@
 import Terms from '@/components/Terms.vue'
 
 export default {
-  name: 'tool',
+  name: 'Tool',
   components: {
     Terms
   }

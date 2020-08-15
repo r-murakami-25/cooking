@@ -1,4 +1,4 @@
-<!-- index.html>App.vue>view(Home.vue)-->
+<!-- index.html>App.vue>view(Home.vue)いらないファイルのはず？-->
 
 <template>
   <div class="Categories">
