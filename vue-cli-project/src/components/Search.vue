@@ -4,16 +4,16 @@
     <input type="text" class="search_box" v-model="keyword" placeholder="料理名・食材でレシピをさがす"  @keypress.enter="onKeypressEnter" value="">
 
     <!-- <table v-if="show"> -->
-      <!-- <table> -->
-        <!-- <tr v-for="item in items" v-bind:key="item.id"> -->
+       <table> 
+         <tr v-for="item in items" v-bind:key="item.id"> 
             <!-- <td v-text="item.id"></td> -->
-          <!-- <router-link :to="{name:'Categories', params:{categories_id: item.slug}}">  -->
+          <router-link :to="{name:'Categories', params:{categories_id: item.slug}}"> 
           <!-- <router-link :to="{name:'Categories', params:{categories_id: item.slug}}">                 -->
-            <!-- <td v-text="item.title"></td> -->
+            <td v-text="item.title"></td> 
             <!-- <td v-text="item.name"></td>  -->
-          <!-- </router-link> -->
-        <!-- </tr> -->
-    <!-- </table> -->
+          </router-link> 
+         </tr> 
+     </table> 
 </div>
     
 </template>
@@ -48,7 +48,7 @@ export default{
          })  
        })  
     },  
-    //取得したドキュメント内の「name=テキストボックスに入力したもの」であればそれらだけ表示
+    //取得したドキュメント内の「name=テキストボックスに入力したもの」であればそれらだけ表示　なくてよい
     watch:{
          keyword(val){
              this.items = [];
@@ -96,6 +96,11 @@ export default{
                              this.$router.push( `/Categories/${object.slug}`)//7/30　質問　val is not undefinedより、inputのvalue(val)を指定するべきだが方法がわからない 答え）v-modelでval=keywordにしてるため、this.keywordが正しい
                  
                }
+
+              //  else if(object.title.indexOf(this.keyword) !== -1){
+              //                this.$router.push( `/Categories/${object.recipe_slug}`)//7/30　質問　val is not undefinedより、inputのvalue(val)を指定するべきだが方法がわからない 答え）v-modelでval=keywordにしてるため、this.keywordが正しい
+                 
+              //  }
 
           }
 

@@ -6,11 +6,16 @@
     <div>
         <p class="mainVisual"><img src="../assets/mainvisual.jpg" alt="mainVisual" ></p> 
         <h2>{{title.length>0?title[0]:"カテゴリー未設定"}}</h2>
-        <!-- <p>{{items[0].point}}</p> -->
-        <p>調理時間</p>
-        <!-- <p>{{items[0].time}}</p>   -->
+
+        
+         <div v-for="item in items" v-bind:key="item.id">
+            <p>ポイント</p>
+            <p>{{item.point}}</p> 
+            <p>調理時間</p>
+            <p>{{item.time}}</p>
+        </div>
+
         <h2>材料</h2>
-       
         <ul>
             <li v-for="item in items" v-bind:key="item.id">
               
@@ -58,8 +63,8 @@ export default{
         return{
 
             // items:[],
-            title:[],
-            items:[],
+            title:[],//SLUG_RECIPE_TABLE＝params(pathのrecipe_id)のことが入る
+            items:[],//firestoreのものが入る
             
 
             // make:"タコ飯",
@@ -115,7 +120,7 @@ export default{
     
 
 
-    //recipe_slug", "==",paramsのもののみ取得
+    //recipe_slug", "==",params(pathのrecipe_id)のもののみ取得
        db.collection('items') 
        
        .where("recipe_slug", "==",params)
