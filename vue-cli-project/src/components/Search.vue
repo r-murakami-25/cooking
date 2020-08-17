@@ -93,8 +93,11 @@ export default{
                   for(let object of this.objects){//配列objectsの中のオブジェクト（i）を1個ずつ繰り返す
                   //if (i.name.indexOf(val) !== -1){//i.nameまたは、title、categoryテキストボックスの値（value）が-1でなければ（あっていれば）以下
                   if (object.name.indexOf(this.keyword) !== -1 || object.title.indexOf(this.keyword) !== -1){
-                             this.$router.push( `/Categories/${object.slug}`)//7/30　質問　val is not undefinedより、inputのvalue(val)を指定するべきだが方法がわからない 答え）v-modelでval=keywordにしてるため、this.keywordが正しい
-                 
+                             this.$router.push( `/Categories/${object.slug}`)
+                  }//7/30　質問　val is not undefinedより、inputのvalue(val)を指定するべきだが方法がわからない 答え）v-modelでval=keywordにしてるため、this.keywordが正しい
+                  else if (object.title.indexOf(this.keyword) !== -1){
+                    console.log(object.title);//質問　else if 機かない
+                             this.$router.push( `/Categories/${object.recipe_slug}`)
                }
 
               //  else if(object.title.indexOf(this.keyword) !== -1){

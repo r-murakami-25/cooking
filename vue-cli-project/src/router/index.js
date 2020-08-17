@@ -5,7 +5,6 @@ import Tool from '../views/Tool.vue'
 import Company from '../views/Company.vue'
 import MainVisual from '../views/MainVisual.vue'
 import Categories from '../views/Categories.vue'
-import　Genre　from '../views/Genre.vue'
 import　Recipe　from '../views/Recipe.vue'
 
 
@@ -29,7 +28,6 @@ Vue.use(VueRouter)
   {
     path: '/',
     component: MainVisual,
-    // Choice:Choice
   },
   {
     path: '/Policy',
@@ -59,17 +57,6 @@ Vue.use(VueRouter)
     //  props:true
     // props: route => ({ id: Number(route.params.id) })
   },
-  {
-    path: '/Genre',
-    component: Genre
-  },
- 
-  // {
-  //  path: '/Recipe',
-  //  name:'Recipe',
-  //   component: Recipe
-  // },
-
  {
     path: '/Recipe/:recipe_id',
     name:'Recipe',

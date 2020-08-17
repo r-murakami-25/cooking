@@ -2,7 +2,7 @@
 
 <template>
   <div class="mainVisual">
-    <Search></Search>
+   
     <MainVisual></MainVisual> 
     <!-- <GenreMenu></GenreMenu> -->
     <Ranking></Ranking>
@@ -19,13 +19,11 @@
 
 <script>
 // @ is an alias to /src
-import  Search from '@/components/Search.vue'
 import  MainVisual from '@/components/MainVisual.vue'
 import  Category from '@/components/Category.vue'
 import  Ranking from '@/components/Ranking.vue'
 import  NewRecipe from '@/components/NewRecipe.vue'
 import  SeasonalRecipe from '@/components/SeasonalRecipe.vue'
-import  GenreMenu from '@/components/GenreMenu.vue'
 //  import  Carousel from '@/components/Carousel.vue'
 
 // import  Recipe from '@/components/Recipe.vue'
@@ -35,10 +33,9 @@ import  GenreMenu from '@/components/GenreMenu.vue'
 export default {
   // name: 'category',
   components: {
-    Search,
+    
     MainVisual,
     Category,
-    GenreMenu,//なし
     Ranking,
     NewRecipe,
     SeasonalRecipe,

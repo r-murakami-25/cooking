@@ -6,16 +6,15 @@
 
     <header>
 
-        <h1 class="logo"><router-link to="/"><img src="./assets/logo.gif" alt="ロゴ"></router-link></h1>
-        <nav class="Navigation">
-          <ul>
+        <h1 class="logo"><router-link to="/"><img src="./assets/logo.png" alt="ロゴ"></router-link></h1>
+        <!-- <nav class="Navigation">
+          <ul> -->
             <!-- <li><router-link to="/Categories">カテゴリー</router-link></li> -->
-            <!-- <li><router-link to="/Genre">ジャンル</router-link></li> -->
-          </ul>
-        </nav>
+          <!-- </ul>
+        </nav> -->
         
         <!-- <input type="text" class="search_box" placeholder="料理名・食材でレシピをさがす" value=""> -->
-        
+         <Search></Search>
     </header>
 
     <router-view/>
@@ -42,7 +41,7 @@
         <li><router-link to="/Company">会社概要</router-link></li>
       </ul>
 
-      <p class="logo"><router-link to="/"><img src="./assets/logo.gif" alt="ロゴ"></router-link></p>
+      <p class="logo"><router-link to="/"><img src="./assets/logo.png" alt="ロゴ"></router-link></p>
 
     
       </footer>
@@ -63,6 +62,8 @@
 
 <script>
 //App.vue以下
+import  Search from '@/components/Search.vue'
+
 // import Home from'./components/Home.vue'
 // import Search from'./components/Search.vue'
 // import categories from'./components/categories.vue'
@@ -71,6 +72,7 @@
 export default {
   name:'app',
   components:{
+    Search,
     // Home:Home,
     // Search:Search
     // categories:categories,
@@ -138,13 +140,13 @@ ul{
 }
 
 header{
-  background:#f5deb3;
+  background:#ffa500;
   padding:1%;
 }
 
 .logo{
   display: inline-block;
-  width:5%;
+  width:30%;
 }
 
 .Navigation{
@@ -175,7 +177,7 @@ header{
 }
 
 footer{
-  background: #deb887;
+  background: #ffa500;
   text-align: center;
 }
 
