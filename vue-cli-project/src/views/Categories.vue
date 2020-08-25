@@ -3,7 +3,7 @@
 <template>
   <div class="Categories">
     <Categories></Categories>
-   
+
     
   </div>
 </template>

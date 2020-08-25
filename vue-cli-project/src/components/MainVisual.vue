@@ -14,16 +14,16 @@
 >
 
   <slide class="slide">
-    <img src="../assets/mainvisual.jpg" alt="スライド1">
+    <img src="../assets/rawhamsalada.jpg" alt="スライド1">
   </slide>
   <slide class="slide">
-    <img src="../assets/mainvisual_2.jpg" alt="スライド2">
+    <img src="../assets/rawhamsalada.jpg" alt="スライド2">
   </slide>
   <slide class="slide">
-    <img src="../assets/mainvisual_3.jpg" alt="スライド3">
+    <img src="../assets/rawhamsalada.jpg" alt="スライド3">
   </slide>
   <slide class="slide">
-    <img src="../assets/mainvisual_4.jpg" alt="スライド4">
+    <img src="../assets/rawhamsalada.jpg" alt="スライド4">
   </slide>
 </carousel>
  

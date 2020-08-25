@@ -43,7 +43,7 @@ export default{
     },
     mounted() {
     var params=this.$route.params.categories_id
-    alert(params);
+    alert(params);//octopas
     alert(SLUG_CATEGORY_TABLE[params])//(SLUG_CATEGORY_TABLE[params])の[params]よくわからない
 
 
@@ -51,7 +51,7 @@ export default{
     // パターン1）SLUG_CATEGORY_TABLE[params]＝subparamsとしてsubparamsを配列aに入れて表示　文字列にならない
 
      var subparams=SLUG_CATEGORY_TABLE[params]
-     console.log(subparams)
+     console.log(subparams)//タコ
      this.title.push(subparams) 
      
 

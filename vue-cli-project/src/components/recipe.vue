@@ -4,8 +4,11 @@
 <template>
 <div id="Recipe">
     <div>
-        <p class="mainVisual"><img src="../assets/mainvisual.jpg" alt="mainVisual" ></p> 
-        <h2>{{title.length>0?title[0]:"カテゴリー未設定"}}</h2>
+         <!-- v-bind:key="item.id"→"item.name"にしたよいか？ -->
+        <div v-for="item in items" v-bind:key="item.name">
+            <p class="mainVisual"><img v-bind:src="item.img"  alt="mainVisual" class=img ></p> 
+        </div>
+             <h2>{{title.length>0?title[0]:"該当するレシピはありませんでした"}}</h2>
 
         
          <div v-for="item in items" v-bind:key="item.id">
