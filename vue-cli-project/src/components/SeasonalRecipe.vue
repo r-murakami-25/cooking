@@ -1,8 +1,5 @@
-<!--  index.html>App.vue>view(Home.vue)>components(Home.vue)-->
-
 
 <template>
-<!--<h2>新着レシピ<h2><div id="New_recipe">の中に入るとflexされてしまう。入らないと画面に出ないどうすればよいか-->
 <div id="NewRecipe">
     <div class="MainRecipe">
         <h2>旬のレシピ</h2>
@@ -18,9 +15,6 @@
 </template>
 
 <script>
-// https://bbbbruno.qrunch.io/entries/YDTE4pZ0erk9uAcQ
-// Vue.js + firestoreでCRUD操作を実現を参考
-
 import db from '../main.js'
 
 export default {  
@@ -31,36 +25,19 @@ export default {
     }  
   },  
   created() {  
-    // fetch data from firestore  
     db.collection('items')  
       .where("category", "==", "肉")
       .get()  
       .then(snapshot => {  
         snapshot.forEach(doc => {  
-          let fields = doc.data()  //item→itemsにしたら起動した
-          fields.id = doc.id  //item→itemsにしたら起動した
+          let fields = doc.data() 
+          fields.id = doc.id  
           this.items.push(fields)  
         })  
       })  
   },  
 }  
-// export default{
-//     name:"NewRecipe",
-//     data(){
-//         return{
-//                 title:'新着レシピ',
-//                 // menu:'大根の照り煮',
-//                 list:[
-//                     {id:1, name:'大根の照り煮'},
-//                     {id:2, name:'ニンジン'},
-//                     {id:3, name:'ぶり照り煮'},
-//                     {id:4, name:'たらの照り煮'},
 
-//                 ]
-//             };
-//     }
-
-// }
 
 </script>
 
@@ -72,16 +49,9 @@ export default {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    /* background: coral; */
 }
 
-/* h2{
-    width:100%;
-    padding: 0 1% 1% 1%;
-} */
-
 h2{
-    /* padding: 0 1% 1% 0; */
     width:100%;
     border-bottom: 1px solid;
     border-top: 1px solid;

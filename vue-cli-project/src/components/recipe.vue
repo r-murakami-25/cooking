@@ -1,10 +1,6 @@
-<!--  index.html>App.vue>view(Home.vue)>components(Home.vue)-->
-
-
 <template>
 <div id="Recipe">
     <div>
-         <!-- v-bind:key="item.id"→"item.name"にしたよいか？ -->
         <div v-for="item in items" v-bind:key="item.name">
             <p class="mainVisual"><img v-bind:src="item.img"  alt="mainVisual" class=img ></p> 
         </div>
@@ -27,12 +23,7 @@
                     <li>{{material?material.amount:""}}</li>
                 </ul>
             </li>  
-        </ul>
-
-                <!-- "m in item?item.material:[]"と"m?m.name:''"はfirestoreに入っていないときに仮のものを作る公式 -->
-                <!-- item?（？左文字があるとき）item.material:[]（右から文字の時） -->
-                <!-- material配列のためv-forすること -->
-            
+        </ul>            
     
          <h3>作り方</h3>
          <ul>
@@ -45,10 +36,6 @@
         </ul>
             
      
-
-        
-
-
     </div> 
 </div>
     
@@ -65,26 +52,10 @@ export default{
     data(){
         return{
 
-            // items:[],
-            title:[],//SLUG_RECIPE_TABLE＝params(pathのrecipe_id)のことが入る
-            items:[],//firestoreのものが入る
             
-
-            // make:"タコ飯",
-            // point:`初めにタコのやわらか煮をつくり、その煮汁とタコを使用します。お好みでホタテやエビなどの魚介類を入れてもおいしいです。バターを足すことでコクを増し、止まらないほどのおいしさに！`,
-            // time:"80分（タコのやわらか煮:50分、タコ飯:25分）",
-            material:[//7/23疑問　どうやってfirestoreに入れる？name同じだけど
-                // {id:1,material:'タコ（刺身用可', amount:'200~300g程'},
-                // {id:2,material:'昆布', amount:'2~3枚'},
-                // {id:3,material:'醤油', amount:'大さじ3杯'},
-                // {id:4,material:'砂糖', amount:'大さじ2杯'},
-                // {id:5,material:'酒', amount:'50ml'},
-                // {id:6,material:'水', amount:'350ml'},
-                // {id:7,material:'米', amount:'2,5ごう'},
-                // {id:8,material:'油揚げ', amount:'2枚'},
-                // {id:9,material:'油', amount:'小さじ1杯'},
-                // {id:10,material:'バター', amount:'20g(適量)'},
-                ],
+            title:[],
+            items:[],
+            material:[],
             recipe:[
                 {id:1, explain:'タコの足を1本ずつ切り分ける（はさみが楽です）'},
                 {id:2, explain:'タコと2~5の材料を加えて、沸騰するまで強火で煮る、沸騰したら弱火で50分蓋をし煮る'},
@@ -106,38 +77,22 @@ export default{
 
 
     var params=this.$route.params.recipe_id
-    alert(params);
-    alert(SLUG_RECIPE_TABLE[params])//(SLUG_CATEGORY_TABLE[params])の[params]よくわからない
-
-// SLUG_RECIPE_TABLE={
-//     octopusrice:"タコ飯",beefbowl:"牛丼",chickenmeatball:"鶏つくね",chickenflakes:"鶏そぼろ丼",grilledfish:"焼き魚",gingerpork:"生姜焼き",deepfriedtatsuta:"赤身魚竜田揚げ",rollcabbage:"ロールキャベツ",friedscallops:"ホタテフライ",
-//     coleslaw:"コールスローサラダ"
-//     }
-
-    //わからない7/18
-    // パターン1）SLUG_CATEGORY_TABLE[params]＝subparamsとしてsubparamsを配列aに入れて表示　文字列にならない
-
-     var subparams=SLUG_RECIPE_TABLE[params]//SLUG_RECIPE_TABLE[0]→タコ
+    var subparams=SLUG_RECIPE_TABLE[params]
      console.log(subparams)
-     this.title.push(subparams) //path=octopasrice=タコライスとなる
+     this.title.push(subparams) 
     
-
-
-    //recipe_slug", "==",params(pathのrecipe_id)のもののみ取得
-       db.collection('items') 
-       
+    db.collection('items') 
        .where("recipe_slug", "==",params)
         .get()  
         .then(snapshot => {  
           snapshot.forEach(doc => {  
-          let item = doc.data()  //item
-            item.id = doc.id  //item
+          let item = doc.data() 
+            item.id = doc.id  
             console.log("item",item)
             this.items.push(item)  
              console.log(this.items)
           })  
        })  
-    //    console.log(items['name'])
 
         
     }
@@ -151,7 +106,6 @@ export default{
 
 <style scoped>
 #Recipe{
-    /* background:wheat; */
     padding: 5%;
 }
 

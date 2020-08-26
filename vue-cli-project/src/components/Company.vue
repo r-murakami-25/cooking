@@ -1,6 +1,3 @@
-<!--  index.html>App.vue>view(Home.vue)>components(Home.vue)-->
-
-
 <template>
 <div id="Company">
     <dl  class="MainCompany" v-for="item in list" v-bind:key="item.id">
@@ -22,11 +19,11 @@ export default{
         return{
                
                 list:[
-                    {id:1, title:'社名', main:`dely株式会社 (dely, Inc.)`},
+                    {id:1, title:'社名', main:`未定`},
 
-                    {id:2, title:'代表取締役', main:`RISAKO`},
+                    {id:2, title:'代表取締役', main:`未定`},
                     
-                    {id:3, title:'設立', main:`2014年4月`},
+                    {id:3, title:'設立', main:`未定`},
                  ]
             };
     }

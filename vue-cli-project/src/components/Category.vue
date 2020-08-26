@@ -1,6 +1,3 @@
-<!--  index.html>App.vue>view(Home.vue)>components(Home.vue)-->
-
-
 <template>
 <div id="Category">
     <h2>カテゴリー</h2>
@@ -45,20 +42,8 @@ export default {
     }  
   },  
   created() {  
-    
-    // fetch data from firestore 
-    //   var params=this.$route.params['id']
-    //  console.log(params)
-    
-
-    //categoriesのitems[]に直接アクセス
     let items= this.categories.map(obj=>obj.items);
-    //self=this(上記のitemsをreference用変数(self)を使って置き換える)参照元→https://qiita.com/shanonim/items/7718556c0fab54a517c2
-    // let self = this （ただの「これという意味で、関数を指すことになるitemsを指してない」）今回はいらない
-
-    //以下　コレクション（itemsの）一覧取得し、変数dataにドキュメントのフィールドをすべて代入。 +slug取得　-router-link :toの飛ぶ先-
-
-    //カテゴリー"肉"
+    
      db.collection('items')  
       .where("category", "==", "肉")
       .get()
@@ -71,7 +56,6 @@ export default {
       })
     }) 
 
-     //カテゴリー"魚介類"
     db.collection('items')  
       .where("category", "==", "魚介類")
       .get()
@@ -84,7 +68,6 @@ export default {
       })
     }) 
 
-     //カテゴリー"野菜"
     db.collection('items')  
       .where("category", "==", "野菜")
       .get()
@@ -106,51 +89,6 @@ export default {
    
 }  
 
-// export default{
-//     name:"Category",
-//     data(){
-//         return{
-//              title: 'カテゴリー一覧',
-            //  categorys:[
-            //  {id:1, name:'野菜', menu:['キャベツ', 'ニンジン', 'トマト', 'ダイコン','ホウレンソウ']},
-            //  {id:2, name:'肉',  menu: ['鶏肉', '牛肉', '豚肉']},
-            //  {id:3, name:'魚',  menu: ['白身魚', '赤身魚', '貝', 'エビ','海藻']},  
-            //  {id:4, name:'豆',  menu: ['豆腐', '大豆']}
-
-            //   ]
-
-//             teams: [
-//             {
-//                  name: '野菜',
-//                  members: [
-//                      { id:1, 'name': 'キャベツ'}, { id:2,'name': 'ニンジン'},{ id:3,'name': 'トマト'},{id:4,'name': 'ダイコン'},
-//                      { id:5, 'name': 'ホウレンソウ'},{ id:6, 'name': 'ジャガイモ'},
-//                  ]
-//              },
-//             {
-//                  name: '肉',
-//                  members: [
-//                      { id:6, 'name': '鶏肉'}, { id:7,'name': '豚肉'},{id:8,'name': '牛肉'}
-//                  ]
-//              },
-//              {
-//                  name: '魚',
-//                  members: [
-//                      { id:9, 'name': '白身魚'}, { id:10,'name': '赤身魚'},{id:11,'name': '貝'},{id:12,'name': 'エビ'},
-//                      { id:13,'name': '海藻'},
-//                  ]
-//              },
-//              {
-//                  name: '豆',
-//                  members: [
-//                      { id:14, 'name': '豆腐'}, {id:15, 'name': '大豆'}
-//                  ]
-//              },
-//          ]
-//         };
-//     }
-
-// }
 
 </script>
 
@@ -163,27 +101,17 @@ export default {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    /* background: coral; */
 }
 
 
 
-/* h1{
-    width:100%;
-    padding: 0 1% 1% 1%;
-} */
+
 h2{
-    /* padding: 0 1% 1% 0; */
     width:100%;
     border-bottom: 1px solid;
     border-top: 1px solid;
 }
 
-/* .category_ist{
-    width:20%;
-    padding:2% 0;
-    display: inline-block;
-} */
 
 span{
     font-size: 25px;
@@ -191,19 +119,17 @@ span{
 }
 
 
-/* スマホの時 */
+
+
+
+
 @media screen and (max-width: 480px){
 
 #Category{
   display: block;
 }
 
-/* .flex{
-    width:50%;
-    display: inline-block;
-    padding:2% 0;
-    
-} */
+
 
 .flex{
     width: 50%;

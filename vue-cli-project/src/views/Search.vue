@@ -1,7 +1,7 @@
 
 <template>
   <div class="Search">
-<!-- 検索結果 -->
+
    
     
   </div>

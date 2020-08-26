@@ -1,9 +1,5 @@
-<!--  index.html>App.vue>view(Home.vue)>components(Home.vue)-->
-
-
 <template>
 <div id="MainVisual">
-<!-- <p class="mainVisual"><img src="../assets/mainvisual.jpg" alt="mainVisual" ></p> -->
 <carousel
 :per-page="1"
 :autoplay="true" 
@@ -47,28 +43,12 @@ export default {
 
 <style scoped>
 
-/* .slide{
-  margin-top: 40px;
-  text-align: center;
-  background: #f5deb3;
-} */
-
 .slide img{
   width: 100%;
   height: 35vw;
   object-fit:cover
 }
 
-/* .VueCarousel-pagination{
-  background:pink;
-}
-.VueCarousel-dot-container{
-  background:pink;
-} */
 
-/* .VueCarousel-pagination[data-v-438fd353] {
-    width: 80%;
-    text-align: s;
-} */
 
 </style>

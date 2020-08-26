@@ -1,12 +1,8 @@
-<!--  index.html>App.vue>view(Home.vue)>components(Home.vue)-->
-
-
 <template>
 <div id="Ranking">
     <h2>人気ランキング</h2>
     <div class="rank" v-for="item in items" v-bind:key="item.id">
      <router-link :to="{name:'Recipe', params:{recipe_id: item.recipe_slug}}"> 
-            <!-- <p>{{title.length>0?title[0]:"カテゴリー未設定"}}</p> -->
             <div class="rank_list"> 
                 <p class="rank_picture"><img v-bind:src="item.img" alt="ランキング" class=img ></p>
                 <div class="rank_description">
@@ -18,10 +14,7 @@
             </div> 
          </router-link>
     </div>
-    <!-- <div class="menu" v-for="item in list" v-bind:key="item.id">
-    <p><img src="../assets/new_recipe.jpg" alt="新着レシピ"></p>
-    <h3>{{item.name}}</h3> 
-    </div>-->
+    
 </div>
     
 </template>
@@ -43,15 +36,9 @@ export default{
     },
     mounted() {
     var params=this.$route.params.categories_id
-    alert(params);//octopas
-    alert(SLUG_CATEGORY_TABLE[params])//(SLUG_CATEGORY_TABLE[params])の[params]よくわからない
 
-
-    //わからない7/18
-    // パターン1）SLUG_CATEGORY_TABLE[params]＝subparamsとしてsubparamsを配列aに入れて表示　文字列にならない
-
-     var subparams=SLUG_CATEGORY_TABLE[params]
-     console.log(subparams)//タコ
+    var subparams=SLUG_CATEGORY_TABLE[params]
+     console.log(subparams)
      this.title.push(subparams) 
      
 
@@ -61,8 +48,8 @@ export default{
     .get()  
     .then(snapshot => {  
          snapshot.forEach(doc => {  
-           let items = doc.data()  //item→itemsにしたら起動した
-           items.id = doc.id  //item→itemsにしたら起動した
+           let items = doc.data()  
+           items.id = doc.id  
            this.items.push(items)  
          })  
        })
@@ -84,7 +71,7 @@ export default{
 }
 
 h2{
-    /* padding: 0 1% 1% 0; */
+    
     width:100%;
     border-bottom: 1px solid;
     border-top: 1px solid;
@@ -111,18 +98,7 @@ h2{
     display: inline-block;
 }
 
-/* .img{
-  width: 100%;
-  height: 20vw;
-  object-fit:cover
-} */
 
-/* .rank_list{
-    width:25%;
-} */
-
-
-/* スマホの時 */
 @media screen and (max-width: 480px){
 #Ranking{
    display: block;
@@ -147,7 +123,6 @@ h2{
     width:70%;
     display: inline-block;
     padding:2%;
-    /* text-align: center; */
 }
 
 .rank_list{
