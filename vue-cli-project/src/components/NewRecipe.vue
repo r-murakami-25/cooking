@@ -53,10 +53,11 @@ export default {
 
 h2{
     width:100%;
-    border-bottom: 1px solid;
-    border-top: 1px solid;
+    border-bottom: double 6px #663300;
+    border-top: double 6px #663300;
+    text-align: middle;
+    text-align: center;
 }
-
 
 .menu{
     width:30%;

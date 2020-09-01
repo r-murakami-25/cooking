@@ -13,6 +13,8 @@
             </div>
        
     </div>
+
+    
 </div>
 
      
@@ -75,6 +77,7 @@ export default{
 h2{
     width:100%;
     padding: 0 1% 1% 1%;
+    
 }
 
 .categories_list{

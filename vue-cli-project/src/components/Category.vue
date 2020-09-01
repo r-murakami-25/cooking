@@ -3,7 +3,7 @@
     <h2>カテゴリー</h2>
 
      <div v-for="category in categories"  v-bind:key="category.id" class="category_list">
-             <h3>{{category.type }}</h3> 
+             <h3 class="category_type">{{category.type }}</h3> 
           <ul>
             <li v-for="item in category.items"  v-bind:key="item.id"  class="flex">
                 <router-link :to="{name:'Categories', params:{categories_id: item.slug}}"> {{ item.name }}</router-link>
@@ -98,9 +98,9 @@ export default {
 <style scoped>
 #Category{
     padding:2%;
-    display: flex;
+    /* display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-between; */
 }
 
 
@@ -110,12 +110,26 @@ h2{
     width:100%;
     border-bottom: 1px solid;
     border-top: 1px solid;
+    border-bottom: double 6px #3b170b;
+    border-top: double 6px #3b170b;
+    text-align: center;
 }
 
+/* .category_type{
+    background: #ccc;
+    box-shadow: 0px 0px 0px 1px #ccc;
+    border: dashed 1px #eaeaea;
+} */
 
 span{
     font-size: 25px;
     font-weight: bold;
+}
+
+ul{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
 }
 
 
@@ -131,13 +145,14 @@ span{
 
 
 
+
 .flex{
     width: 50%;
     display: inline-block;
     padding: 2%;
-    background: #f5deb3;
-    box-shadow: 0px 0px 0px 1px #f5deb3;
-    border: dashed 1px white;
+    /* background: #ccc;
+    box-shadow: 0px 0px 0px 1px #ccc;
+    border: dashed 1px #eaeaea; */
 }
 
 .category_list{

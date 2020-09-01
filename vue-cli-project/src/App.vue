@@ -7,7 +7,7 @@
 
     <header>
 
-        <h1 class="logo"><router-link to="/"><img src="./assets/logo.png" alt="ロゴ"></router-link></h1>
+        <h1 class="logo"><router-link to="/"><img src="./assets/logo.png" alt="ロゴ" class="logo_img"></router-link></h1>
         <!-- <nav class="Navigation">
           <ul> -->
             <!-- <li><router-link to="/Categories">カテゴリー</router-link></li> -->
@@ -141,13 +141,17 @@ ul{
 }
 
 header{
-  background:#ffa500;
+  background:#ffff;
   padding:1%;
 }
 
 .logo{
   display: inline-block;
   width:30%;
+}
+
+img.logo_img {
+    vertical-align: middle;
 }
 
 .Navigation{
@@ -178,7 +182,7 @@ header{
 }
 
 footer{
-  background: #ffa500;
+  background: #a3a3a3;
   text-align: center;
 }
 

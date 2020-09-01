@@ -53,8 +53,9 @@ export default {
 
 h2{
     width:100%;
-    border-bottom: 1px solid;
-    border-top: 1px solid;
+    border-bottom: double 6px #3b170b;
+    border-top: double 6px #3b170b;
+    text-align: center;
 }
 
 

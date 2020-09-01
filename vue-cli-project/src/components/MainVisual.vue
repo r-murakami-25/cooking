@@ -10,16 +10,16 @@
 >
 
   <slide class="slide">
-    <img src="../assets/rawhamsalada.jpg" alt="スライド1">
+    <img src="../assets/rawhamsalada_1.jpg" alt="スライド1">
   </slide>
   <slide class="slide">
-    <img src="../assets/rawhamsalada.jpg" alt="スライド2">
+    <img src="../assets/rawhamsalada_1.jpg" alt="スライド2">
   </slide>
   <slide class="slide">
-    <img src="../assets/rawhamsalada.jpg" alt="スライド3">
+    <img src="../assets/rawhamsalada_1.jpg" alt="スライド3">
   </slide>
   <slide class="slide">
-    <img src="../assets/rawhamsalada.jpg" alt="スライド4">
+    <img src="../assets/rawhamsalada_1.jpg" alt="スライド4">
   </slide>
 </carousel>
  
@@ -45,8 +45,7 @@ export default {
 
 .slide img{
   width: 100%;
-  height: 35vw;
-  object-fit:cover
+  
 }
 
 

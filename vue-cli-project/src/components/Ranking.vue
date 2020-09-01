@@ -5,12 +5,12 @@
      <router-link :to="{name:'Recipe', params:{recipe_id: item.recipe_slug}}"> 
             <div class="rank_list"> 
                 <p class="rank_picture"><img v-bind:src="item.img" alt="ランキング" class=img ></p>
-                <div class="rank_description">
-                        <p class="ranking">{{item.rank}}位</p>
-                        <p>{{item.title}}</p>
-                        <p>{{item.time}}分</p>
+                <ul class="rank_description">
+                        <li class="ranking">{{item.rank}}位</li>
+                        <li>{{item.title}}</li>
+                        <li>{{item.time}}分</li>
                     
-                </div>
+                </ul>
             </div> 
          </router-link>
     </div>
@@ -62,7 +62,7 @@ export default{
 
 <style scoped>
 #Ranking{
-    background:#f5deb3;
+    
     padding:2%;
     display: flex;
     flex-wrap: wrap;
@@ -73,8 +73,10 @@ export default{
 h2{
     
     width:100%;
-    border-bottom: 1px solid;
-    border-top: 1px solid;
+    border-bottom: double 6px #3b170b;
+    border-top: double 6px #3b170b;
+    text-align: center;
+
 }
 
 .ranking{

@@ -46,4 +46,8 @@ export default{
   padding:0.5%;
 }
 
+input.search_box{
+    background:#ccc;
+}
+
 </style>

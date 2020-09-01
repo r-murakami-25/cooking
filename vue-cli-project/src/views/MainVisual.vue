@@ -6,10 +6,10 @@
     <MainVisual></MainVisual> 
     <!-- <GenreMenu></GenreMenu> -->
     <Ranking></Ranking>
+    <Carousel></Carousel>
     <NewRecipe></NewRecipe>
     <SeasonalRecipe></SeasonalRecipe>
     <Category></Category>
-    <!-- <Carousel></Carousel> -->
      <!-- <Carousel :img-list="images"></Carousel>  -->
 
     <!-- <Recipe></Recipe> -->
@@ -25,7 +25,7 @@ import  Category from '@/components/Category.vue'
 import  Ranking from '@/components/Ranking.vue'
 import  NewRecipe from '@/components/NewRecipe.vue'
 import  SeasonalRecipe from '@/components/SeasonalRecipe.vue'
-// import  Carousel from '@/components/Carousel.vue'
+import  Carousel from '@/components/Carousel.vue'
 
 // import  Recipe from '@/components/Recipe.vue'
 // import  Categories from '@/components/Categories.vue'
@@ -40,7 +40,7 @@ export default {
     Ranking,
     NewRecipe,
     SeasonalRecipe,
-    // Carousel
+    Carousel
     //  Carousel
     // Recipe,
     // Categories,
