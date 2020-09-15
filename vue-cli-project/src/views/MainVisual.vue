@@ -6,9 +6,9 @@
     <MainVisual></MainVisual> 
     <!-- <GenreMenu></GenreMenu> -->
     <Ranking></Ranking>
-    <Carousel></Carousel>
-    <NewRecipe></NewRecipe>
     <SeasonalRecipe></SeasonalRecipe>
+    <!-- <Carousel></Carousel> -->
+    <NewRecipe></NewRecipe>
     <Category></Category>
      <!-- <Carousel :img-list="images"></Carousel>  -->
 

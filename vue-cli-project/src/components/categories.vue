@@ -4,7 +4,7 @@
     
     <div class="MainCategories">
        
-        <h2>{{titles.length>0?titles[0]:"カテゴリー未設定"}}のレシピ</h2> 
+        <h2>{{titles.length>0?titles[0]:"カテゴリー未設定"}}のレシピ 一覧</h2> 
             <div class="categories_list" v-for="item in items" v-bind:key="item.id">
                  <router-link :to="{name:'Recipe', params:{recipe_id: item.recipe_slug}}"> 
                     <p id="mainVisual"><img v-bind:src="item.img"  alt="mainVisual" class=img ></p>

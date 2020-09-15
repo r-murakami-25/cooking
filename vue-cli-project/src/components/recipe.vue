@@ -7,17 +7,16 @@
              <h2>{{title.length>0?title[0]:"該当するレシピはありませんでした"}}</h2>
 
         
-         <div v-for="item in items" v-bind:key="item.id">
-            <p>ポイント</p>
+         <div v-for="item in items" v-bind:key="item.id" class="text">
+            <h3>ポイント</h3> 
             <p>{{item.point}}</p> 
-            <p>調理時間</p>
-            <p>{{item.time}}</p>
+            <p>調理時間　:{{item.time}}</p>
         </div>
 
-        <h2>材料</h2>
-        <ul>
+        <ul class="materials_list">
             <li v-for="item in items" v-bind:key="item.id">
-              
+                      <h3>材料<span>({{item?item.servings:""}}人前)</span></h3>
+
                 <ul  class="materials" v-for="material in item?item.materials:[]" v-bind:key="material?material.name:''">
                     <li>{{material?material.material:""}}</li>
                     <li>{{material?material.amount:""}}</li>
@@ -29,8 +28,13 @@
          <ul>
             <li v-for="item in items" v-bind:key="item.id">
               
-                <ul  class="materials" v-for="c in item?item.cook:[] " v-bind:key="c?c.explain:''">
-                    <li>{{c?c.explain:""}}</li>
+              
+                <ul  class="materials" v-for="(c,i) in item?item.cook:[] " v-bind:key="c?c.explain:''">
+                    <li>
+                        <!-- <span>{{item.turn[0]}}</span> -->
+                     {{i+1}}.{{c?c.explain:""}}
+                     <!-- ul 頭の数字は v-forのindexを返すことで表現できる-->
+                    </li>
                 </ul>
             </li>  
         </ul>
@@ -109,14 +113,31 @@ export default{
     padding: 5%;
 }
 
+.text{
+    margin:2%;
+}
+
+h3{
+    border-bottom: 1px solid;
+}
+
 ul{
     list-style: none;
+}
+
+ul.materials_list {
+    padding-bottom: 10px;
 }
 
 .materials{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    border-bottom: 1px solid #dcdcdc;
+}
+
+span{
+    font-size: 12px;
 }
 
 
