@@ -37,17 +37,30 @@ export default{
 </script>
 
 <style>
+ #Search{
+    width: 60%;
+}
 .search_box{
+  
+  width:100%;
+  border-radius: 6px;
+  padding:1%;
+  
+}
+
+/* .search_box{
   display: block;
   margin: 0 auto;
   width:80%;
   background:#ffffff;
   border-radius: 6px;
   padding:0.5%;
+  margin: 0 auto;
 }
 
 input.search_box{
     background:#ccc;
-}
+    margin: 0 auto;
+} */ 
 
 </style>

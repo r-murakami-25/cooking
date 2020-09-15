@@ -117,18 +117,21 @@ h2{
 }
 
 .rank_picture{
-    width:30%;
+    width:40%;
     display: inline-block;
 }
 
 .rank_description{
-    width:70%;
+    width:60%;
     display: inline-block;
     padding:2%;
 }
 
 .rank_list{
     border-bottom: 1px solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 

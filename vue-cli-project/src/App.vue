@@ -133,6 +133,7 @@ ul{
 #app {
   font-family: "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", "MS PGothic", Osaka, sans-serif;
 	font-weight: normal;
+  font-size: 100%;
   /* font-family: Avenir, Helvetica, Arial, sans-serif;  */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -143,10 +144,15 @@ ul{
 header{
   background:#ffff;
   padding:1%;
+  display: flex;
+  -webkit-align-items: center; /* 縦方向中央揃え（Safari用） */
+  align-items: center; /* 縦方向中央揃え */
+  -webkit-justify-content:space-around ; /* 横方向中央揃え（Safari用） */
+  justify-content: space-around; /* 横方向中央揃え */
 }
 
 .logo{
-  display: inline-block;
+   display: inline-block; 
   width:30%;
 }
 
@@ -157,7 +163,7 @@ img.logo_img {
 .Navigation{
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around ;
+  justify-content: space- ;
   text-align: center;
   padding:1%;
 }

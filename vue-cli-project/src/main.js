@@ -18,6 +18,12 @@ import * as firebase from 'firebase/app' //変更点  エラーのexport defort(
 import 'firebase/firestore' //変更点
 import "firebase/storage"; //追加 7/11
 
+import jQuery from 'jquery'//jQueryとの共存
+global.jquery = jQuery
+global.$ = jQuery
+window.$ = window.jQuery = require('jquery')
+
+
 
 var firebaseConfig = {
   apiKey: "AIzaSyD7F8TCPHLy7omQhWDTNsrJ4_o6RJp6V9Y",
@@ -53,6 +59,5 @@ new Vue({
 //router,store使ってAppコンポーネント（app.vue）を表示するという意味（重要度低い）
 
 //→要はindex.htmlとApp.vueを連携させる地う意味
-
 
 
