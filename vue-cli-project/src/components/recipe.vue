@@ -10,7 +10,7 @@
          <div v-for="item in items" v-bind:key="item.id" class="text">
             <h3>ポイント</h3> 
             <p>{{item.point}}</p> 
-            <p>調理時間　:{{item.time}}</p>
+            <p>調理時間　:{{item.time}}分</p>
         </div>
 
         <ul class="materials_list">
@@ -31,9 +31,7 @@
               
                 <ul  class="materials" v-for="(c,i) in item?item.cook:[] " v-bind:key="c?c.explain:''">
                     <li>
-                        <!-- <span>{{item.turn[0]}}</span> -->
                      {{i+1}}.{{c?c.explain:""}}
-                     <!-- ul 頭の数字は v-forのindexを返すことで表現できる-->
                     </li>
                 </ul>
             </li>  
@@ -60,17 +58,6 @@ export default{
             title:[],
             items:[],
             material:[],
-            recipe:[
-                {id:1, explain:'タコの足を1本ずつ切り分ける（はさみが楽です）'},
-                {id:2, explain:'タコと2~5の材料を加えて、沸騰するまで強火で煮る、沸騰したら弱火で50分蓋をし煮る'},
-                {id:3, explain:'タコを煮て30分したら米を洗い、そのまま水につける（15~20分程）'},
-                {id:4, explain:'タコと油揚げ（湯で油抜き後）ひと口サイズに切り分ける'},
-                {id:5, explain:'フライパンに油をひき、米を入れる'},
-                {id:6, explain:'水300mlとタコのやわらか煮の煮汁（昆布もすべて）を加え、タコと油揚げ（魚介類加えてよい）も入れる'},
-                {id:7, explain:'蓋をし、強火にかける、煮立ったら弱火にし約12分炊く、おこげがほしい場合は最後に強火で1分ほどにし、火を止め10分蒸らす'},
-                {id:8, explain:'最後にバターを加えて混ぜるとさらにおいしい！'},
-               ],
-                
 
 
             };
@@ -109,8 +96,27 @@ export default{
 
 
 <style scoped>
-#Recipe{
-    padding: 5%;
+/* #Recipe{
+    padding: 2%;
+}  */
+
+img{
+    vertical-align: bottom;
+    width: 68%;
+}
+
+p.mainVisual {
+    text-align: center;
+}
+
+p{
+    padding: 1%;
+}
+
+h2 {
+    font-size: 140%;
+    padding: 1% 4%;
+
 }
 
 .text{
@@ -119,10 +125,12 @@ export default{
 
 h3{
     border-bottom: 1px solid;
+    padding: 0 4%;
 }
 
 ul{
     list-style: none;
+    padding: 2%;
 }
 
 ul.materials_list {

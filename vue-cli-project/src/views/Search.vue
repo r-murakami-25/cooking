@@ -16,7 +16,7 @@ export default {
     Search
   },
    mounted: () => {
- 　//キーワードを取得し検索する
+ 　//キーワードURLからを取得し検索する
 }
 
 }

@@ -1,20 +1,13 @@
-<!-- index.html>App.vue>view(Home.vue)-->
 
 <template>
   <div class="mainVisual">
    
     <MainVisual></MainVisual> 
-    <!-- <GenreMenu></GenreMenu> -->
     <Ranking></Ranking>
     <SeasonalRecipe></SeasonalRecipe>
-    <!-- <Carousel></Carousel> -->
+    <!-- <Carousel></Carousel>  -->
     <NewRecipe></NewRecipe>
     <Category></Category>
-     <!-- <Carousel :img-list="images"></Carousel>  -->
-
-    <!-- <Recipe></Recipe> -->
-    <!-- <Categories></Categories> -->
-    
   </div>
 </template>
 
@@ -25,14 +18,10 @@ import  Category from '@/components/Category.vue'
 import  Ranking from '@/components/Ranking.vue'
 import  NewRecipe from '@/components/NewRecipe.vue'
 import  SeasonalRecipe from '@/components/SeasonalRecipe.vue'
-import  Carousel from '@/components/Carousel.vue'
-
-// import  Recipe from '@/components/Recipe.vue'
-// import  Categories from '@/components/Categories.vue'
+// import  Carousel from '@/components/Carousel.vue'
 
 
 export default {
-  // name: 'category',
   components: {
     
     MainVisual,
@@ -40,11 +29,8 @@ export default {
     Ranking,
     NewRecipe,
     SeasonalRecipe,
-    Carousel
-    //  Carousel
-    // Recipe,
-    // Categories,
-   
+    // Carousel
+    
   }
 }
 </script>

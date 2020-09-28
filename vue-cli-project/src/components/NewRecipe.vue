@@ -5,7 +5,7 @@
       <div class="menu" v-for="item in items" v-bind:key="item.id">
         <router-link :to="{name:'Recipe', params:{recipe_id: item.recipe_slug}}"> 
               <p><img v-bind:src="item.img"  alt="新着レシピ" class=img ></p>
-          <h3>{{item.title}}</h3>
+          <p>{{item.title}}</p>
         </router-link>
       </div>
       
@@ -51,6 +51,8 @@ export default {
 }
 
 
+
+
 h2{
     width:100%;
     border-bottom: double 6px #663300;
@@ -66,7 +68,7 @@ h2{
 
 .img{
   width: 100%;
-  height: 30vw;
+  /* height: 30vw; */
   object-fit:cover
 }
 

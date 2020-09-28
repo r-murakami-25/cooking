@@ -98,9 +98,7 @@ export default {
 <style scoped>
 #Category{
     padding:2%;
-    /* display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between; */
+    
 }
 
 

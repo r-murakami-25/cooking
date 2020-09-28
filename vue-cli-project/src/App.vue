@@ -1,6 +1,4 @@
 
-<!--index.html>App.vue-->
-
 <template>
   <div id="app">
     
@@ -8,31 +6,10 @@
     <header>
 
         <h1 class="logo"><router-link to="/"><img src="./assets/logo.png" alt="ロゴ" class="logo_img"></router-link></h1>
-        <!-- <nav class="Navigation">
-          <ul> -->
-            <!-- <li><router-link to="/Categories">カテゴリー</router-link></li> -->
-          <!-- </ul>
-        </nav> -->
-        
-        <!-- <input type="text" class="search_box" placeholder="料理名・食材でレシピをさがす" value=""> -->
-         <Search></Search>
+        <Search></Search>
     </header>
 
     <router-view/>
-
-    <!-- <router-view/> -->
-    
-    <!-- <div class="categories_main">
-      <categories></categories>
-      <categories></categories>
-      <categories></categories>
-      <categories></categories>
-      <categories></categories>
-      <categories></categories>
-
-    </div> -->
-    <!-- <recipe></recipe> -->
-    
 
     <footer class="footer">
 
@@ -40,7 +17,7 @@
         <li><router-link to="/Policy">ポリシー</router-link></li>
         <li><router-link to="/Tool">利用規約</router-link></li>
         <li><router-link to="/Company">会社概要</router-link></li>
-      </ul>
+      </ul> 
 
       <p class="logo"><router-link to="/"><img src="./assets/logo.png" alt="ロゴ"></router-link></p>
 
@@ -120,14 +97,12 @@ a{
 
 a:hover{
     color:black;
-    text-decoration: underline #f5deb3;
+    text-decoration: underline #0000;
 }
 
 ul{
   list-style: none;
 }
-
-
 
 
 #app {
@@ -141,8 +116,15 @@ ul{
   margin: 0 auto;
 }
 
+p{
+  font-size: 16px;
+}
+
+
+/* 以下#app */
+
+/* 以下header */
 header{
-  background:#ffff;
   padding:1%;
   display: flex;
   -webkit-align-items: center; /* 縦方向中央揃え（Safari用） */
@@ -152,40 +134,22 @@ header{
 }
 
 .logo{
-   display: inline-block; 
-  width:30%;
+   display: inline-block;  
+    width:30%;
 }
 
 img.logo_img {
     vertical-align: middle;
 }
 
-.Navigation{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space- ;
-  text-align: center;
-  padding:1%;
+h2{
+  font-size:140%;
 }
 
-.Navigation ul{
-  width:100%;
+h3{
+  font-size: 110%;
 }
 
-.Navigation ul li{
-  display: inline-block;
-  width: 30%;
-}
-
-
-
-.MainRecipe{
-    padding:2%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    /* background: coral; */
-}
 
 footer{
   background: #a3a3a3;
@@ -200,34 +164,4 @@ footer{
 
 
 
-/* .footer{
-  display:flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.footer_nav{
-  width: 95%;
-} */
-
-/* .categories_main{
-  max-width: 1200px;
-  background:whitesmoke;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around ;
-} */
-
-/* #nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-} */
 </style>

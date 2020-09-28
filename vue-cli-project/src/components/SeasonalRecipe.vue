@@ -1,6 +1,5 @@
 <template>
-<!-- <div id="Carousel"> -->
-<div id="Carousel">
+<div id="SeasonalRecipe">
     <h2>旬のレシピ</h2>
 
     <div class='container'>
@@ -14,11 +13,10 @@
     </div>  -->
     
     <ul v-for="item in items"  v-bind:key="item.id">
-        <!-- Categories→recommendationにする -->
             <li>
                 <router-link :to="{name:'Recipe', params:{recipe_id: item.recipe_slug}}">                     
                     <img v-bind:src="item.img"  alt="旬のおすすめ" class=img >
-                      <h3>{{item.title}}</h3>
+                      <p>{{item.title}}</p>
                 </router-link>
             </li>
     </ul>
@@ -31,34 +29,6 @@
 </template>
 
 <script>
-// import db from '../main.js'
-
-// export default{
-//     name:"Carousel",
-//     data(){
-//         return{
-//              items:[],
-//         };
-//     },
-//     mounted() { 
-
-//     db.collection('items') 
-//          .get()  
-//          .then(snapshot => {  
-//           snapshot.forEach(doc => {  
-//             let item = doc.data()  
-//             item.id = doc.id  
-//             console.log("item",item)
-//             this.items.push(item)  
-//           })  
-//         })  
-
-        
-//     }
-
-    
-
-// }
 
 import db from '../main.js'
 
@@ -71,7 +41,6 @@ export default {
   },  
   created() {  
     db.collection('items')  
-    //   .where("category", "==", "肉")
       .get()  
       .then(snapshot => {  
         snapshot.forEach(doc => {  
@@ -89,7 +58,7 @@ export default {
 
 
 <style scoped>
-#Carousel{
+#SeasonalRecipe{
     padding:2%;
 }
 
@@ -103,6 +72,7 @@ h2{
 }
 
 
+
 .container {
     display: flex;
     flex-wrap: wrap;
@@ -113,7 +83,7 @@ ul{
     display: inline-block;
     width:30%;
     padding:2% 0;
-    margin: 0 1.5%;/*←消すかも*/
+    margin: 0 1.5%;
 } 
 
 
@@ -125,24 +95,13 @@ ul{
   }
   
   .container {
-    /* Scrollsnapはスースという挙動ではなく、カクカクする（スライドしすぎないようにするため） */
-    /* display: block; */
-    /* scroll-snap-type: x mandatory; */
     width: 100vw;
-    /* height: 30vh;高さ指定すると上下隙間出来る */
-    /* overflow: auto; */
     margin-left: -2%;
-    /* ネガティブマージンで－つけることではみ出す部分を補正できる */
     overflow-x: scroll;
     overflow-y: hidden;
-    /* 上下のカクカク消す */
     display: flex;
     flex-wrap: nowrap;
     -webkit-overflow-scrolling: touch;
-    /* スマホ対応のため必須 */
-    /* overflow-scrolling: touch; スマホ対応のため必須 */
-    /* overflow-x: hidden; */
-    
 }
 
  .container::-webkit-scrollbar {

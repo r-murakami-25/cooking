@@ -1,10 +1,10 @@
 <template>
 <div id="Policy">
-    <h1>プライバシーポリシー</h1>
-    <p>未定<p>
+    <h2>プライバシーポリシー</h2>
+    <p>ただ今準備中<p>
     <div class="MainPolicy" v-for="item in list" v-bind:key="item.id">
-        <h2>{{item.title}}</h2>
-        <p>{{item.main}}</p> 
+        <!-- <h2>{{item.title}}</h2>
+        <p>{{item.main}}</p>  -->
        
     </div>
    
@@ -21,9 +21,9 @@ export default{
     data(){
         return{
                
-                list:[
-                    未定
-                 ]
+                 list:[
+                     
+                  ]
             };
     }
 
@@ -34,7 +34,6 @@ export default{
 
 <style scoped>
 #Policy{
-    background:#f5deb3;
     padding:2%;
 }
 

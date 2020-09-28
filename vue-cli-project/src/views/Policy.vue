@@ -1,4 +1,3 @@
-<!-- index.html>App.vue>view(Home.vue)-->
 
 <template>
   <div class="Policy">
@@ -9,12 +8,9 @@
 </template>
 
 <script>
-// @ is an alias to /src
-
 import Policy from '@/components/Policy.vue'
 
 export default {
-  // name: 'Home',
   components: {
     Policy
   }

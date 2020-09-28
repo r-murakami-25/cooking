@@ -1,30 +1,24 @@
+// 読み込み
+
 import Vue from 'vue'// Vue 本体
-import App from './App.vue'// 最初のコンポーネント App.vue を読み込む
-import router from './router'// routerを読み込む
+import App from './App.vue'// App.vue を読み込む
+import router from './router'// vue-routerを読み込む
 import store from './store'//storeを読み込む
 
 Vue.config.productionTip = false
 
-//firebase　以下
-// import firebase from 'firebase' このままだとfirebase全てインストールしてしまう、以下必要な物だけインストールすること
-
-// import firebase from "firebase/app"
-// import "firebase/auth"
-// import "firebase/firestore"
-
 // vue.js firestoreでCRUD操作実現
 
-import * as firebase from 'firebase/app' //変更点  エラーのexport defort(import as db)is not founded解決、すべて読みこんでいなかったため
+import * as firebase from 'firebase/app' 
 import 'firebase/firestore' //変更点
-import "firebase/storage"; //追加 7/11
+import "firebase/storage"; 
 
 import jQuery from 'jquery'//jQueryとの共存
 global.jquery = jQuery
 global.$ = jQuery
 window.$ = window.jQuery = require('jquery')
 
-
-
+// firestore
 var firebaseConfig = {
   apiKey: "AIzaSyD7F8TCPHLy7omQhWDTNsrJ4_o6RJp6V9Y",
   authDomain: "my-portfolio-9973f.firebaseapp.com",
@@ -34,7 +28,6 @@ var firebaseConfig = {
   messagingSenderId: "495175028807",
   appId: "1:495175028807:web:bb5db40b14607beec72162"
 };
-
 
 // Initialize Firebase
 // firebase.initializeApp(firebaseConfig);
@@ -49,15 +42,11 @@ export const db = firebase.firestore();
 // export default firestore
 
 
-// Vue アプリケーションを起動します
+// Vue アプリケーションを起動する
 new Vue({
   el:'#app',
   router,
   store,
   render: h => h(App)
-}).$mount('#app')//id が app である DOM （index.html）に連携し,
-//router,store使ってAppコンポーネント（app.vue）を表示するという意味（重要度低い）
-
-//→要はindex.htmlとApp.vueを連携させる地う意味
-
+}).$mount('#app')
 

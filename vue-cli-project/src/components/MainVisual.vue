@@ -1,41 +1,27 @@
 <template>
-<div id="MainVisual">
-<head>
-<!-- <link rel="stylesheet" href="css/reset.css"> -->
-<!-- <link rel="stylesheet" href="css/style.css"> -->
-<!-- <script src="js/jquery-2.1.4.min.js"></script> -->
-<!-- <script src="js/script.js"></script> -->
-</head>
-<body>
-<div id="wrapper">
-  <!-- <header>
-    <h1>Slider</h1>
-  </header> -->
-  <div id="slide">
-    <ul>
-      <li><img src="../assets/salmonappetizer.jpg"  alt="img1" class="img"></li>
-      <li><img src="../assets/coldpasta.jpg"  alt="img2" class="img"></li>
-      <li><img src="../assets/rawhamsalada.jpg"  alt="img3" class="img"></li>
-    </ul>
-  </div>
-  <div id="button">
-    <ul>
-      <li><a href="#" class="target">1</a></li>
-      <li><a href="#">2</a></li>
-      <li><a href="#">3</a></li>
-    </ul>
-  </div>
-</div>
-</body>
-</div>
+	<div id="MainVisual">
+		<div id="wrapper">
+		
+			<div id="slide">
+				<ul>
+					<li><img src="../assets/applepie_1.jpg"  alt="img1" class="img"></li>
+					<li><img src="../assets/coldpasta_1.jpg"  alt="img2" class="img"></li>
+					<li><img src="../assets/coldpasta_3.jpg"  alt="img3" class="img"></li>
+				</ul>
+			</div>
+
+			<div id="button">
+				<ul>
+					<li><a href="#" class="target">1</a></li>
+					<li><a href="#">2</a></li>
+					<li><a href="#">3</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
 </template>
 
 <style scoped>
-body{
-	font-family:Arial, sans-serif;
-	-webkit-font-smoothing:antialiased;
-	color:#A8DCDB;
-}
 
 li{
 	list-style-type:none;
@@ -47,18 +33,12 @@ li{
 }
 
 .img{
-  width:95%;
-  height: 47vw;
-  object-fit:cover;
+  width:68%;
+  /* height: 47vw; */
+  /* object-fit:cover; */
   border-radius: 0%;
 }
 
-/* header h1{
-	font-size:3em;
-	font-weight:bold;
-	text-align:center;
-	padding:40px 25px;
-} */
 
 #slide ul{
 	position:relative;
@@ -72,7 +52,7 @@ li{
 }
 
 #button{
-	padding-top:51%;
+	padding-top:56%;
 	text-align:center;
 }
 
@@ -96,11 +76,11 @@ li{
 	width:10px;
 	height:10px;
 	border-radius:7px;
-	background:#A8DCDB;
+	background:#c0c0c0;
 }
 
 #button ul li a.target{
-	background:#41AFAD;
+	background:#696969;
 }
 
 
@@ -109,6 +89,7 @@ li{
 <script>
 export default {
   mounted: function() {
+
     //  $(function(){
 	var count = $("#slide li").length;
 	var current = 1;
@@ -116,6 +97,8 @@ export default {
 	var interval = 3000;
 	var duration = 500;
 	var timer;
+
+	console.log(next);
 
 	// 1番目の写真以外は非表示
 	$("#slide li:not(:first-child)").hide();
@@ -130,7 +113,7 @@ export default {
 
 
 		current = next;
-		next = ++next;
+		next = next+1;
 
 		if(next > count){
 			next = 1;
@@ -150,122 +133,15 @@ export default {
 		
 		return false;
 	});
-// });
 
 
+
+  },
+  beforeDestroy:function(){
+	  	clearInterval(timer);
+		
   }
 }
 
 
 </script>
-<!-- <carousel
-:per-page="1"
-:autoplay="true" 
-:autoplayTimeout="3000"
-:loop="true"
-:speed="2000"
-
->
-
-  <slide class="slide">
-    <img src="../assets/rawhamsalada_1.jpg" alt="スライド1">
-  </slide>
-  <slide class="slide">
-    <img src="../assets/rawhamsalada_1.jpg" alt="スライド2">
-  </slide>
-  <slide class="slide">
-    <img src="../assets/rawhamsalada_1.jpg" alt="スライド3">
-  </slide>
-  <slide class="slide">
-    <img src="../assets/rawhamsalada_1.jpg" alt="スライド4">
-  </slide>
-</carousel>
- 
-
-</div>
-    
-</template>
-
-<script>
-import { Carousel, Slide } from 'vue-carousel';
-export default {
-    name:"MainVisual",
-    components: {
-        Carousel,
-        Slide
-    }
-}
-
-</script>
-
-
-<style>
-
-.slide img{
-  width: 100%;
-  
-}
-
-.VueCarousel-slide{
-  padding:100px;
-}
-
-.VueCarousel-dot{
-  padding:2%;
-}
-
-
-
-</style> -->
-
-<!-- <carousel
-:per-page="1"
-:autoplay="true" 
-:autoplayTimeout="3000"
-:loop="true"
-:speed="2000"
-
->
-
-  <slide class="slide">
-    <img src="../assets/rawhamsalada_1.jpg" alt="スライド1">
-  </slide>
-  <slide class="slide">
-    <img src="../assets/rawhamsalada_1.jpg" alt="スライド2">
-  </slide>
-  <slide class="slide">
-    <img src="../assets/rawhamsalada_1.jpg" alt="スライド3">
-  </slide>
-  <slide class="slide">
-    <img src="../assets/rawhamsalada_1.jpg" alt="スライド4">
-  </slide>
-</carousel>
- 
-
-</div>
-    
-</template>
-
-<script>
-import { Carousel, Slide } from 'vue-carousel';
-export default {
-    name:"MainVisual",
-    components: {
-        Carousel,
-        Slide
-    }
-}
-
-</script>
-
-
-<style scoped>
-
-.slide img{
-  width: 100%;
-  
-}
-
-
-
-</style> -->

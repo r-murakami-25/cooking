@@ -6,7 +6,7 @@
             <div class="rank_list"> 
                 <p class="rank_picture"><img v-bind:src="item.img" alt="ランキング" class=img ></p>
                 <ul class="rank_description">
-                        <li class="ranking">{{item.rank}}位</li>
+                        <li class="ranking"><span>{{item.rank}}位</span></li>
                         <li>{{item.title}}</li>
                         <li>{{item.time}}分</li>
                     
@@ -79,10 +79,9 @@ h2{
 
 }
 
-.ranking{
-    font-size:20px ;
+.ranking span {
+    font-size: 18px;
 }
-
 
 .rank{
    width:30%;

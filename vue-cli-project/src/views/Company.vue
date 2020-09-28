@@ -1,5 +1,3 @@
-<!-- index.html>App.vue>view(Home.vue)-->
-
 <template>
   <div class="company">
     <Company></Company>

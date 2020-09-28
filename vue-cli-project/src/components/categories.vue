@@ -88,8 +88,8 @@ h2{
 
 .img{
   width: 100%;
-  height: 30vw;
-  object-fit:cover
+  /* height: 30vw;
+  object-fit:cover */
 }
 
 
