@@ -13,8 +13,8 @@ Vue.use(VueRouter)
 // VueRouterインスタンス(UIに出すもの)を生成する
   const router = new VueRouter({
 
-      // mode: 'history',
-      // routes: [],
+      //  mode: 'history',
+      //  routes: [],
 
     scrollBehavior (to, from, savedPosition) {
       if (savedPosition) {

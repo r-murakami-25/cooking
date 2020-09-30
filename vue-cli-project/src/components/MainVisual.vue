@@ -4,9 +4,9 @@
 		
 			<div id="slide">
 				<ul>
-					<li><img src="../assets/applepie_1.jpg"  alt="img1" class="img"></li>
-					<li><img src="../assets/coldpasta_1.jpg"  alt="img2" class="img"></li>
-					<li><img src="../assets/coldpasta_3.jpg"  alt="img3" class="img"></li>
+					<li><img src="../assets/pastaCollection.jpg"  alt="パスタコレクション" class="img"></li>
+					<li><img src="../assets/saladaCollection.jpg"  alt="サラダコレクション" class="img"></li>
+					<li><img src="../assets/ChineseCookingCollection.jpg"  alt="中華料理コレクション" class="img"></li>
 				</ul>
 			</div>
 
@@ -22,6 +22,10 @@
 </template>
 
 <style scoped>
+
+#MainVisual{
+	padding-top: 2%;
+}
 
 li{
 	list-style-type:none;
@@ -52,7 +56,7 @@ li{
 }
 
 #button{
-	padding-top:56%;
+	padding-top:36%;
 	text-align:center;
 }
 
@@ -73,8 +77,8 @@ li{
 	text-indent:-9999px;
 	text-decoration:none;
 	display:block;
-	width:10px;
-	height:10px;
+	width:8px;
+	height:8px;
 	border-radius:7px;
 	background:#c0c0c0;
 }

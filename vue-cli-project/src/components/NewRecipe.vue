@@ -55,10 +55,12 @@ export default {
 
 h2{
     width:100%;
-    border-bottom: double 6px #663300;
-    border-top: double 6px #663300;
     text-align: middle;
     text-align: center;
+    border-bottom: double 4px #a3a3a3;
+    -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+    border-top: double 4px #a3a3a3;
 }
 
 .menu{

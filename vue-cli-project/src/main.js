@@ -4,6 +4,11 @@ import Vue from 'vue'// Vue 本体
 import App from './App.vue'// App.vue を読み込む
 import router from './router'// vue-routerを読み込む
 import store from './store'//storeを読み込む
+// import VueCarousel from 'vue-carousel';
+
+// Vue.use(VueCarousel);
+// Vue.config.productionTip = false
+ 
 
 Vue.config.productionTip = false
 

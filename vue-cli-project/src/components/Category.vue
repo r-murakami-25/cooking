@@ -108,9 +108,11 @@ h2{
     width:100%;
     border-bottom: 1px solid;
     border-top: 1px solid;
-    border-bottom: double 6px #3b170b;
-    border-top: double 6px #3b170b;
     text-align: center;
+    border-bottom: double 4px #a3a3a3;
+    -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+    border-top: double 4px #a3a3a3;
 }
 
 /* .category_type{

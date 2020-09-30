@@ -14,7 +14,7 @@
     <footer class="footer">
 
       <ul class=footer_nav>
-        <li><router-link to="/Policy">ポリシー</router-link></li>
+        <!-- <li><router-link to="/Policy">ポリシー</router-link></li> -->
         <li><router-link to="/Tool">利用規約</router-link></li>
         <li><router-link to="/Company">会社概要</router-link></li>
       </ul> 
@@ -131,6 +131,9 @@ header{
   align-items: center; /* 縦方向中央揃え */
   -webkit-justify-content:space-around ; /* 横方向中央揃え（Safari用） */
   justify-content: space-around; /* 横方向中央揃え */
+  border-bottom: 1px solid #d5d2cd;
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
 }
 
 .logo{

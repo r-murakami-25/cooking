@@ -110,7 +110,7 @@ p.mainVisual {
 }
 
 p{
-    padding: 1%;
+    padding: 2%;
 }
 
 h2 {
