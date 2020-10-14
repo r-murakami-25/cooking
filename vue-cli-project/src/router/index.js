@@ -54,10 +54,17 @@ Vue.use(VueRouter)
     name:'Recipe',
     component: Recipe
 },
+
 {
-  path: '/Search/:search_id',
+  path: '/Search',
   name:'Search',
   component: Search
+},
+
+//どこにもヒットしない時
+{ 
+  path: '*', 
+  redirect: '/notfound' 
 },
 
 
