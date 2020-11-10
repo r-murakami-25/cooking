@@ -58,3 +58,36 @@ export default {
 
 }
 </script>
+
+<style scoped>
+
+.MainCategories{
+    padding:2%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+   
+}
+
+h2{
+    width:100%;
+    padding: 0 1% 1% 1%;
+    
+}
+
+.categories_list{
+    width:45%;
+    padding:2% 0;
+    display: inline-block;
+}
+
+.img{
+  width: 100%;
+  /* height: 30vw;
+  object-fit:cover */
+}
+
+
+
+
+</style>

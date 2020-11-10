@@ -36,6 +36,10 @@ export default {
               type:'野菜',
               items: [],
           },
+          {
+              type:'スイーツ',
+              items: [],
+          },
           
       ],
         
@@ -80,6 +84,18 @@ export default {
       })
     })  
 
+
+    db.collection('items')  
+      .where("category", "==", "スイーツ")
+      .get()
+      .then((querySnapshot)=> {
+      let data = []
+      querySnapshot.forEach((doc)=> {
+        console.log(doc)
+        this.categories[3].items.push(doc.data())
+        console.log(this.categories)
+      })
+    })  
 
     
     

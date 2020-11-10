@@ -2,7 +2,7 @@
 <div id="Search">
     <input type="text" v-model="query" class="search_box"  placeholder="料理名・食材でレシピをさがす"  @keypress.enter="onKeypressEnter" value="">
 
-    <pre>{{$data}}</pre>
+    <!-- <pre>{{$data}}</pre> -->
 
     <div class="MainCategories">
        
